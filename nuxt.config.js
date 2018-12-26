@@ -1,5 +1,7 @@
 const pkg = require('./package')
 
+const baseRoute = env => (env === 'GH_PAGES' ? '/blog/' : '/')
+
 module.exports = {
   mode: 'universal',
 
@@ -14,8 +16,16 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: baseRoute(process.env.DEPLOY_ENV) + 'favicon.ico'
+      }
     ]
+  },
+
+  router: {
+    base: baseRoute(process.env.DEPLOY_ENV)
   },
 
   /*
