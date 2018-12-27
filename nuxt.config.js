@@ -1,6 +1,6 @@
 const pkg = require('./package')
 
-const baseRoute = env => (env === 'GH_PAGES' ? '/blog/' : '/')
+const baseRoute = env => (env === 'GH_PAGES' ? '/portfolio/' : '/')
 
 module.exports = {
   mode: 'universal',
