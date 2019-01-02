@@ -1,7 +1,7 @@
 <template>
   <div class="portfolio-top">
     <div>
-      <logo />
+      <portfolio-logo />
       <h1 class="title">
         Romukey's portfolio
       </h1>
@@ -13,11 +13,11 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import PortfolioLogo from '~/components/atoms/portfolio-logo.vue'
 
 export default {
   components: {
-    Logo,
+    PortfolioLogo,
   },
 }
 </script>
