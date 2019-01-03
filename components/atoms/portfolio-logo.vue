@@ -9,6 +9,7 @@
   img {
     border-radius: 50%;
     border: solid 5px $white;
+    height: 150px;
   }
 }
 </style>

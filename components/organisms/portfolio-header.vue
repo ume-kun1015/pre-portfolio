@@ -1,0 +1,83 @@
+<template>
+  <header class="portfolio-header">
+    <div class="pc-header-menu">
+      <div class="title text-h2">ROMUKEY</div>
+      <div class="nav-bar">
+        <portfolio-header-menu :menus="menus" />
+      </div>
+      <div class="sns">
+        <portfolio-header-sns />
+      </div>
+    </div>
+  </header>
+</template>
+
+<script>
+import PortfolioHeaderMenu from '~/components/molecules/portfolio-header-menu.vue'
+import PortfolioHeaderSns from '../molecules/portfolio-header-sns.vue'
+
+export default {
+  components: {
+    PortfolioHeaderSns,
+    PortfolioHeaderMenu,
+  },
+  data() {
+    return {
+      menus: [
+        {
+          title: 'Skills',
+          url: '/skills',
+        },
+        {
+          title: 'Career',
+          url: '/careers',
+        },
+        {
+          title: 'Books',
+          url: '/books',
+        },
+        {
+          title: 'Hobbies',
+          url: '/hobbies',
+        },
+      ],
+    }
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+.portfolio-header {
+  padding: 1rem;
+  background: $dark_navy;
+
+  .pc-header-menu {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 15px 0;
+    display: flex;
+    flex-direction: row;
+
+    .title {
+      color: $blue;
+      width: 20%;
+    }
+
+    .nav-bar {
+      width: 60%;
+    }
+
+    .sns {
+      width: 20%;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-mobile) {
+  .portfolio-header {
+    .pc-header-menu {
+      display: none;
+    }
+  }
+}
+</style>
