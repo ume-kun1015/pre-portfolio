@@ -41,7 +41,7 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [{ src: '~/plugins/aos.js', ssr: false }, { src: '~/plugins/doughnut-chart.js', ssr: false }],
+  plugins: ['~/plugins/constant.js', { src: '~/plugins/aos.js', ssr: false }, { src: '~/plugins/doughnut-chart.js', ssr: false }],
 
   /*
   ** Nuxt.js modules
