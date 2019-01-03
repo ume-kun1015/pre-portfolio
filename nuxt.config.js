@@ -19,7 +19,7 @@ module.exports = {
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: baseRoute(process.env.DEPLOY_ENV) + 'favicon.ico',
+        href: baseRoute(process.env.DEPLOY_ENV) + 's/images/logo.jpg',
       },
     ],
   },
