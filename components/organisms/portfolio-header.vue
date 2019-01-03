@@ -1,6 +1,6 @@
 <template>
   <header class="portfolio-header">
-    <div class="pc-header-menu">
+    <div class="header-menu">
       <div class="title text-h2">
         <nuxt-link to="/">
           ROMUKEY
@@ -11,6 +11,9 @@
       </div>
       <div class="sns">
         <portfolio-header-sns />
+      </div>
+      <div class="sp-header-menu">
+        <font-awesome-icon class="fa-2x" :icon="spMenuBarIconClass" />
       </div>
     </div>
   </header>
@@ -45,6 +48,7 @@ export default {
           url: '/hobbies',
         },
       ],
+      spMenuBarIconClass: ['fas', 'bars'],
     }
   },
 }
@@ -55,7 +59,7 @@ export default {
   padding: 1rem;
   background: $dark_navy;
 
-  .pc-header-menu {
+  .header-menu {
     max-width: 960px;
     margin: 0 auto;
     padding: 15px 0;
@@ -78,13 +82,35 @@ export default {
     .sns {
       width: 20%;
     }
+
+    .sp-header-menu {
+      display: none;
+    }
   }
 }
 
 @media only screen and (max-width: $breakpoint-mobile) {
   .portfolio-header {
-    .pc-header-menu {
-      display: none;
+    .header-menu {
+      .title {
+        width: 50%;
+      }
+
+      .nav-bar {
+        display: none;
+      }
+
+      .sns {
+        display: none;
+      }
+
+      .sp-header-menu {
+        width: 50%;
+        display: initial;
+        text-align: right;
+        padding: 0 15px;
+        color: $blue;
+      }
     }
   }
 }
