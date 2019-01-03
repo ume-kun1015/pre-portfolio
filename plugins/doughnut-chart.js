@@ -3,7 +3,16 @@ import { Doughnut } from 'vue-chartjs'
 
 Vue.component('portolio-doughnut-chart', {
   extends: Doughnut,
-  props: ['data', 'options'],
+  props: {
+    data: {
+      type: Object,
+      default: () => {},
+    },
+    options: {
+      type: Object,
+      default: () => {},
+    },
+  },
   mounted() {
     this.renderChart(this.data, this.options)
   },
