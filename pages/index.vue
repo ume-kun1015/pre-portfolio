@@ -118,7 +118,7 @@ export default {
         {
           companyName: '株式会社エブリー',
           jobDescription: '1. DELISH KITCHENのAPIサーバーの開発/運用 2. DELISH KITCHENのWEBフロント開発',
-          startDate: '2018/08',
+          startDate: '2018/03',
         },
       ],
       programmingLanguageChartData: {
