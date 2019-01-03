@@ -1,48 +1,35 @@
 <template>
-  <section class="container">
+  <div class="portfolio-top">
     <div>
-      <logo/>
+      <portfolio-logo />
       <h1 class="title">
-        Portfolio
+        Romukey's portfolio
       </h1>
       <h2 class="subtitle">
-        My portfolio
+        coming soon...
       </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">
-          GitHub
-        </a>
-      </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import PortfolioLogo from '~/components/atoms/portfolio-logo.vue'
 
 export default {
   components: {
-    Logo,
+    PortfolioLogo,
   },
 }
 </script>
 
-<style>
-.container {
+<style lang="scss" scoped>
+.portfolio-top {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  background: $dark_navy;
 }
 
 .title {
@@ -60,9 +47,5 @@ export default {
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
 }
 </style>
