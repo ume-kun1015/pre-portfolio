@@ -1,7 +1,11 @@
 <template>
   <header class="portfolio-header">
     <div class="pc-header-menu">
-      <div class="title text-h2">ROMUKEY</div>
+      <div class="title text-h2">
+        <nuxt-link to="/">
+          ROMUKEY
+        </nuxt-link>
+      </div>
       <div class="nav-bar">
         <portfolio-header-menu :menus="menus" />
       </div>
@@ -61,6 +65,10 @@ export default {
     .title {
       color: $blue;
       width: 20%;
+
+      a {
+        text-decoration: none;
+      }
     }
 
     .nav-bar {
