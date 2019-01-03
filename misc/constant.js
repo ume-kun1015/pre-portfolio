@@ -31,5 +31,62 @@ export default {
       RATIO: 5,
     },
   ],
-  CLOUD: [{ NAME: 'AWS', COLOR: '#e76d0c', RATIO: 100 }],
+  AWS_SERVICE: [
+    {
+      NAME: 'EC2',
+      COLOR: '#e76d0c',
+    },
+    {
+      NAME: 'ECS',
+      COLOR: '#e76d0c',
+    },
+    {
+      NAME: 'ECR',
+      COLOR: '#e76d0c',
+    },
+    {
+      NAME: 'Cloudfront',
+      COLOR: '#e76d0c',
+    },
+    {
+      NAME: 'Route53',
+      COLOR: '#e76d0c',
+    },
+    {
+      NAME: 'S3',
+      COLOR: '#DC143C',
+    },
+    {
+      NAME: 'RDS',
+      COLOR: '#0000CD',
+    },
+    {
+      NAME: 'ElasticCache',
+      COLOR: '#0000CD',
+    },
+    {
+      NAME: 'vpc',
+      COLOR: '#32CD32',
+    },
+    {
+      NAME: 'Athena',
+      COLOR: '#e76d0c',
+    },
+    {
+      NAME: 'Lambda',
+      COLOR: '#e76d0c',
+    },
+    {
+      NAME: 'Elastic Transcoder',
+      COLOR: '#e76d0c',
+    },
+    {
+      NAME: 'DynanoDB',
+      COLOR: '#0000CD',
+    },
+    {
+      NAME: 'API Gateway',
+      COLOR: '#FFFF00',
+    },
+  ],
 }
