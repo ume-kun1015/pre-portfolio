@@ -67,6 +67,24 @@
         <portolio-doughnut-chart :data="awsServiceChartData" :options="awsServiceChartOption" />
       </div>
     </section>
+
+    <section class="books-section-wrapper">
+      <div class="books-title-wrapper">
+        <div class="books-title">
+          <h2>影響を受けた本</h2>
+        </div>
+      </div>
+      <div class="books-cards-wrapper">
+        <ul class="books-cards">
+          <li
+            v-for="(book, index) in books"
+            :key="index"
+          >
+            <portfolio-book-item-card :title="book.title" :url="book.url" />
+          </li>
+        </ul>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -74,12 +92,14 @@
 import PortfolioLogo from '~/components/atoms/portfolio-logo.vue'
 import PortfolioStrengthItem from '~/components/molecules/portfolio-strength-item.vue'
 import PortfolioCareerItem from '~/components/molecules/portfolio-career-item.vue'
+import PortfolioBookItemCard from '~/components/molecules/portfolio-book-item-card.vue'
 
 export default {
   components: {
     PortfolioLogo,
     PortfolioStrengthItem,
     PortfolioCareerItem,
+    PortfolioBookItemCard,
   },
   data() {
     const language = this.$constant.LANGUAGE
@@ -155,6 +175,16 @@ export default {
           fontSize: 14,
         },
       },
+      books: [
+        {
+          title: 'SOFT SKILLS',
+          url: 'https://images-na.ssl-images-amazon.com/images/I/41YPVaA69ZL._SX337_BO1,204,203,200_.jpg',
+        },
+        {
+          title: 'CAREER SKILLS',
+          url: 'https://images-na.ssl-images-amazon.com/images/I/51WEQS8rl4L._SX352_BO1,204,203,200_.jpg',
+        },
+      ],
     }
   },
 }
@@ -305,6 +335,44 @@ export default {
     .skills-chart-wrapper {
       display: flex;
       justify-content: center;
+    }
+  }
+
+  .books-section-wrapper {
+    background: $dark_navy;
+
+    .books-title-wrapper {
+      max-width: $breakpoint-pc-large;
+      margin: 0 auto;
+
+      .books-title {
+        color: $blue;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .books-title::after {
+        content: '';
+        display: block;
+        width: 20%;
+        margin: 6px auto 0;
+        border-bottom: 1px solid $blue;
+        transition: width 0.3s ease-in-out;
+      }
+    }
+
+    .books-cards-wrapper {
+      max-width: $breakpoint-pc-large;
+      margin: 0 auto;
+
+      .books-cards {
+        display: flex;
+        justify-content: space-evenly;
+
+        li {
+          width: 50%;
+        }
+      }
     }
   }
 }
