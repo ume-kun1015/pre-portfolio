@@ -34,7 +34,7 @@ export default {
 
   .introduction-section-wrapper {
     min-height: 480px;
-    height: calc(60vh);
+    height: calc(50vh);
     background: $dark_navy;
 
     .introduction-wrapper {
