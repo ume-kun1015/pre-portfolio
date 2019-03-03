@@ -9,11 +9,13 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    titleTemplate: `%s | ROMUKEY PORTFOLIO`,
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description },
+      { hid: 'viewport', name: 'viewport', content: 'width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=no' },
+      { hid: 'http-equiv', 'http-equiv': 'X-UA-Compatible', content: 'IE=edge,chrome=1' },
+      { hid: 'description', name: 'description', content: 'ROMUKEY Portfolio Built by Nuxtjs' },
+      { hid: 'robots', name: 'robots', content: 'index, follow' },
     ],
     link: [
       {
@@ -41,7 +43,12 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ['~/plugins/constant.js', { src: '~/plugins/aos.js', ssr: false }, { src: '~/plugins/doughnut-chart.js', ssr: false }],
+  plugins: [
+    '~/plugins/constant.js',
+    '~/plugins/meta-info.js',
+    { src: '~/plugins/aos.js', ssr: false },
+    { src: '~/plugins/doughnut-chart.js', ssr: false },
+  ],
 
   /*
   ** Nuxt.js modules

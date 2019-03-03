@@ -25,6 +25,17 @@ export default {
   components: {
     PortfolioLogo,
   },
+  head() {
+    return {
+      title: 'トップページ',
+      meta: [this.$metaInfo.getDescription(this.description), this.$metaInfo.getKeywords('ポートフォリオ, portfolio, nuxtjs, romukey')],
+    }
+  },
+  data() {
+    return {
+      description: `アカペラとスノボが大好きなエンジニア。メインはサーバーサイド。最近はNuxtjsでの業務でフロントにはまり、フロントサイドやデザインへ転向中。`,
+    }
+  },
 }
 </script>
 
