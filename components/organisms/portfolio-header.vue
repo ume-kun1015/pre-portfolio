@@ -30,24 +30,7 @@ export default {
   },
   data() {
     return {
-      menus: [
-        {
-          title: 'Skills',
-          url: '/skills',
-        },
-        {
-          title: 'Career',
-          url: '/careers',
-        },
-        {
-          title: 'Books',
-          url: '/books',
-        },
-        {
-          title: 'Hobbies',
-          url: '/hobbies',
-        },
-      ],
+      menus: [],
       spMenuBarIconClass: ['fas', 'bars'],
     }
   },
