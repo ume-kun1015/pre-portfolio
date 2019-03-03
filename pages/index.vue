@@ -10,10 +10,10 @@
           </h1>
         </div>
       </div>
-    </section>
 
-    <section class="portfolio-logo-section-wrapper" data-aos="fade" data-aos-delay="200">
-      <portfolio-logo />
+      <section class="portfolio-logo-section-wrapper" data-aos="fade" data-aos-delay="200">
+        <portfolio-logo />
+      </section>
     </section>
   </div>
 </template>
@@ -30,11 +30,10 @@ export default {
 
 <style lang="scss" scoped>
 .portfolio-top {
-  min-height: 100vh;
+  height: calc(100vh - 88px);
 
   .introduction-section-wrapper {
-    min-height: 480px;
-    height: calc(50vh);
+    height: 100%;
     background: $dark_navy;
 
     .introduction-wrapper {
@@ -42,8 +41,7 @@ export default {
       margin: 0 auto;
 
       .introduction-text {
-        min-height: 400px;
-        height: calc(30vh);
+        height: 375px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -56,12 +54,12 @@ export default {
         }
       }
     }
-  }
 
-  .portfolio-logo-section-wrapper {
-    margin-top: -80px;
-    z-index: 99;
-    text-align: center;
+    .portfolio-logo-section-wrapper {
+      margin-top: -50px;
+      z-index: 2;
+      text-align: center;
+    }
   }
 }
 </style>
