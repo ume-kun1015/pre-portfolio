@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="portfolio-default-layout">
     <portfolio-header />
 
     <nuxt />
@@ -15,3 +15,9 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.portfolio-default-layout {
+  height: 100vh;
+}
+</style>
