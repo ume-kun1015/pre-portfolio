@@ -12,9 +12,6 @@
       <div class="sns">
         <portfolio-header-sns />
       </div>
-      <div class="sp-header-menu">
-        <font-awesome-icon class="fa-2x" :icon="spMenuBarIconClass" />
-      </div>
     </div>
   </header>
 </template>
@@ -39,8 +36,9 @@ export default {
 
 <style lang="scss" scoped>
 .portfolio-header {
-  padding: 1rem;
+  padding: 1em 1.5em;
   background: $dark_navy;
+  height: 100px;
 
   .header-menu {
     max-width: 960px;
@@ -65,10 +63,6 @@ export default {
     .sns {
       width: 20%;
     }
-
-    .sp-header-menu {
-      display: none;
-    }
   }
 }
 
@@ -77,22 +71,6 @@ export default {
     .header-menu {
       .title {
         width: 50%;
-      }
-
-      .nav-bar {
-        display: none;
-      }
-
-      .sns {
-        display: none;
-      }
-
-      .sp-header-menu {
-        width: 50%;
-        display: initial;
-        text-align: right;
-        padding: 0 15px;
-        color: $blue;
       }
     }
   }
