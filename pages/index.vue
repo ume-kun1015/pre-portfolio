@@ -30,7 +30,7 @@ export default {
 
 <style lang="scss" scoped>
 .portfolio-top {
-  height: calc(100vh - 88px);
+  height: calc(100vh - 100px);
 
   .introduction-section-wrapper {
     height: 100%;
@@ -59,6 +59,26 @@ export default {
       margin-top: -50px;
       z-index: 2;
       text-align: center;
+    }
+  }
+
+  @media only screen and (max-width: $breakpoint-mobile) {
+    .introduction-section-wrapper {
+      .introduction-wrapper {
+        .introduction-text {
+          width: 75%;
+          height: 300px;
+
+          h1 {
+            word-wrap: break-word;
+            font-size: 1.5em;
+          }
+        }
+      }
+
+      .portfolio-logo-section-wrapper {
+        margin-top: -25px;
+      }
     }
   }
 }

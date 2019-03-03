@@ -11,5 +11,13 @@
     border: solid 5px $white;
     height: 150px;
   }
+
+  @media only screen and (max-width: $breakpoint-mobile) {
+    img {
+      border-radius: 50%;
+      border: solid 2px $white;
+      height: 100px;
+    }
+  }
 }
 </style>
