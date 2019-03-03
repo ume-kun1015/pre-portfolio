@@ -45,6 +45,7 @@ module.exports = {
   */
   plugins: [
     '~/plugins/constant.js',
+    '~/plugins/img.js',
     '~/plugins/meta-info.js',
     { src: '~/plugins/aos.js', ssr: false },
     { src: '~/plugins/doughnut-chart.js', ssr: false },
