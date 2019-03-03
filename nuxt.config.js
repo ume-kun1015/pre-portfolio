@@ -9,11 +9,13 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    titleTemplate: `%s | ROMUKEY PORTFOLIO`,
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description },
+      { hid: 'viewport', name: 'viewport', content: 'width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=no' },
+      { hid: 'http-equiv', 'http-equiv': 'X-UA-Compatible', content: 'IE=edge,chrome=1' },
+      { hid: 'description', name: 'description', content: 'ROMUKEY Portfolio Built by Nuxtjs' },
+      { hid: 'robots', name: 'robots', content: 'index, follow' },
     ],
     link: [
       {

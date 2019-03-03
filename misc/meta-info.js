@@ -6,8 +6,4 @@ export default {
   getKeywords(keyword) {
     return { hid: 'keywords', name: 'keywords', content: keyword }
   },
-
-  getRobots() {
-    return { hid: 'robots', name: 'robots', content: 'index, follow' }
-  },
 }
