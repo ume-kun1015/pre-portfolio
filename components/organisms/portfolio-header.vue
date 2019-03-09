@@ -29,7 +29,7 @@ export default {
 
 <style lang="scss" scoped>
 .portfolio-header {
-  padding: 1em 1.5em;
+  padding: 1em 2em;
   background: $dark_navy;
   height: 100px;
 
