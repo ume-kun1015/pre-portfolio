@@ -1,6 +1,6 @@
 <template>
   <a
-    :href="twitterUrl"
+    :href="$portfolio.twitter.url"
     class="portfolio-twitter-btn"
   >
     <font-awesome-icon class="twitter-icon fa-2x" :icon="twitterIconClass" />
@@ -12,7 +12,6 @@ export default {
   data() {
     return {
       twitterIconClass: ['fab', 'twitter'],
-      twitterUrl: 'https://twitter.com/romukey',
     }
   },
 }
