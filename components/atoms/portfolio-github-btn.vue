@@ -20,6 +20,8 @@ export default {
 
 <style lang="scss" scoped>
 .portfolio-github-btn {
+  display: block;
+
   .github-icon {
     color: $blue;
   }

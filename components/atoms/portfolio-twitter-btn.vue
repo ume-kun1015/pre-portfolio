@@ -1,9 +1,9 @@
 <template>
   <a
-    :href="githubUrl"
+    :href="twitterUrl"
     class="portfolio-twitter-btn"
   >
-    <font-awesome-icon class="twitter-icon fa-2x" :icon="githubIconClass" />
+    <font-awesome-icon class="twitter-icon fa-2x" :icon="twitterIconClass" />
   </a>
 </template>
 
@@ -11,8 +11,8 @@
 export default {
   data() {
     return {
-      githubIconClass: ['fab', 'twitter'],
-      githubUrl: 'https://twitter.com/romukey',
+      twitterIconClass: ['fab', 'twitter'],
+      twitterUrl: 'https://twitter.com/romukey',
     }
   },
 }
@@ -20,6 +20,8 @@ export default {
 
 <style lang="scss" scoped>
 .portfolio-twitter-btn {
+  display: block;
+
   .twitter-icon {
     color: $blue;
   }
