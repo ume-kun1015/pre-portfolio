@@ -26,6 +26,12 @@
             <portfolio-twitter-btn />
             <p class="menu-text">Twitter</p>
           </div>
+          <nuxt-link to="/tech-blogs">
+            <div class="menu-item">
+              <portfolio-tech-btn />
+              <p class="menu-text">Tech blog</p>
+            </div>
+          </nuxt-link>
         </div>
       </div>
     </transition>
@@ -38,12 +44,14 @@ import { mapGetters, mapMutations } from 'vuex'
 import PortfolioLogoBtn from '~/components/atoms/portfolio-logo-btn.vue'
 import PortfolioGithubBtn from '~/components/atoms/portfolio-github-btn.vue'
 import PortfolioTwitterBtn from '~/components/atoms/portfolio-twitter-btn.vue'
+import PortfolioTechBtn from '~/components/atoms/portfolio-tech-btn.vue'
 
 export default {
   components: {
     PortfolioLogoBtn,
     PortfolioGithubBtn,
     PortfolioTwitterBtn,
+    PortfolioTechBtn,
   },
   computed: {
     ...mapGetters({
