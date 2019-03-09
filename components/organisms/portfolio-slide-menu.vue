@@ -12,11 +12,17 @@
             <portfolio-logo-btn />
             <p class="menu-text">トップページ</p>
           </div>
-          <div class="menu-item">
+          <div
+            class="menu-item"
+            @click="openInNewTab($portfolio.github.url)"
+          >
             <portfolio-github-btn />
             <p class="menu-text">Github</p>
           </div>
-          <div class="menu-item">
+          <div
+            class="menu-item"
+            @click="openInNewTab($portfolio.twitter.url)"
+          >
             <portfolio-twitter-btn />
             <p class="menu-text">Twitter</p>
           </div>
@@ -48,6 +54,9 @@ export default {
     ...mapMutations({
       close: 'slide-menu/close',
     }),
+    openInNewTab(url) {
+      window.open(url)
+    },
   },
 }
 </script>
