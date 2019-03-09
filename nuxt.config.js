@@ -1,4 +1,3 @@
-const pkg = require('./package')
 const StylelintPlugin = require('stylelint-webpack-plugin')
 const baseRoute = env => (env === 'GH_PAGES' ? '/portfolio' : '')
 const portfolioContext = require('./portfolio.config.js')
