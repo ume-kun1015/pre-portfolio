@@ -1,5 +1,5 @@
 <template>
-  <div class="portfolio-slide-menu-opener">
+  <div class="portfolio-slide-menu-opener" @click="open">
     <font-awesome-icon
       :icon="menuIconClass"
       class="menu-icon fa-2x"
@@ -8,11 +8,18 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
   data() {
     return {
       menuIconClass: ['fas', 'bars'],
     }
+  },
+  methods: {
+    ...mapMutations({
+      open: 'slide-menu/open',
+    }),
   },
 }
 </script>
