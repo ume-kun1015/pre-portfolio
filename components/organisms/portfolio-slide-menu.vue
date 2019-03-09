@@ -8,24 +8,32 @@
     <transition name="menu-fade">
       <div v-if="isOpened" class="menu">
         <div class="menu-item-wrapper">
-          <div class="menu-item">
-            <portfolio-logo-btn />
-            <p class="menu-text">トップページ</p>
-          </div>
+          <nuxt-link to="/">
+            <div class="menu-item" @click="close">
+              <portfolio-logo-btn />
+              <p class="menu-text">トップページ</p>
+            </div>
+          </nuxt-link>
           <div
             class="menu-item"
-            @click="openInNewTab($portfolio.github.url)"
+            @click="openInNewTab($portfolio.github.url); close();"
           >
             <portfolio-github-btn />
             <p class="menu-text">Github</p>
           </div>
           <div
             class="menu-item"
-            @click="openInNewTab($portfolio.twitter.url)"
+            @click="openInNewTab($portfolio.twitter.url); close();"
           >
             <portfolio-twitter-btn />
             <p class="menu-text">Twitter</p>
           </div>
+          <nuxt-link to="/tech-blogs">
+            <div class="menu-item" @click="close">
+              <portfolio-tech-btn />
+              <p class="menu-text">Tech blog</p>
+            </div>
+          </nuxt-link>
         </div>
       </div>
     </transition>
@@ -38,12 +46,14 @@ import { mapGetters, mapMutations } from 'vuex'
 import PortfolioLogoBtn from '~/components/atoms/portfolio-logo-btn.vue'
 import PortfolioGithubBtn from '~/components/atoms/portfolio-github-btn.vue'
 import PortfolioTwitterBtn from '~/components/atoms/portfolio-twitter-btn.vue'
+import PortfolioTechBtn from '~/components/atoms/portfolio-tech-btn.vue'
 
 export default {
   components: {
     PortfolioLogoBtn,
     PortfolioGithubBtn,
     PortfolioTwitterBtn,
+    PortfolioTechBtn,
   },
   computed: {
     ...mapGetters({
