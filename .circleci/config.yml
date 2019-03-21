@@ -36,6 +36,15 @@ jobs:
       - run:
           name: copy dist directory to function
           command: npm run build:copy
+      - run:
+          name: firebase deploy
+          command: |
+            project_id=$DEV_PROJECT_ID
+            if [ "$CIRCLE_BRANCH" = "master" ]; then
+              project_id=$PROJECT_ID
+            fi
+
+            ./scripts/deploy-firebase.sh -p $project_id -t $FIREBASE_TOKEN
 
 workflows:
   version: 2
