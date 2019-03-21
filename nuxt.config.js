@@ -3,6 +3,7 @@ const portfolioContext = require('./portfolio.config.js')
 
 module.exports = {
   mode: 'universal',
+  srcDir: 'app',
 
   env: {
     portfolio: portfolioContext,
@@ -104,7 +105,7 @@ module.exports = {
         config.plugins.push(
           // FIX 20190321 don't pass vue extension to files. build does not work
           new StylelintPlugin({
-            files: ['**/*.scss'],
+            files: ['app/**/*.scss'],
           })
         )
       }
