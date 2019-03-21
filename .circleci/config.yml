@@ -30,6 +30,12 @@ jobs:
       - restore_cache:
           keys:
             - npm-{{ checksum "package.json" }}
+      - run:
+          name: clean functions ssr directory
+          command: npm run functions:ssr:clean
+      - run:
+          name: copy dist directory to function
+          command: npm run build:copy
 
 workflows:
   version: 2
