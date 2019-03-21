@@ -5,6 +5,7 @@ jobs:
       - image: circleci/node:10.14.0
     steps:
       - checkout
+      - setup_remote_docker
       - restore_cache:
           keys:
             - npm-{{ checksum "package.json" }}
