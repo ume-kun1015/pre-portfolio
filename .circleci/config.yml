@@ -18,6 +18,9 @@ jobs:
       - run:
           name: installng local dependencies
           command: npm run lint
+      - run:
+          name: building
+          command: npm run build
 
   deploy:
     docker:
