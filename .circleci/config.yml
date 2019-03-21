@@ -9,19 +9,13 @@ jobs:
       - restore_cache:
           keys:
             - npm-{{ checksum "package.json" }}
-      - run:
-          command: linting
-          name: npm install
+      - run: npm install
       - save_cache:
           paths:
             - node_modules
           key: npm-{{ checksum "package.json" }}
-      - run:
-          name: installng local dependencies
-          command: npm run lint
-      - run:
-          name: building
-          command: npm run build
+      - run: npm run lint
+      - run: npm run build
 
   deploy:
     docker:
