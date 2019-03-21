@@ -102,8 +102,9 @@ module.exports = {
           exclude: /(node_modules)/,
         })
         config.plugins.push(
+          // FIX 20190321 don't pass vue extension to files. build does not work
           new StylelintPlugin({
-            files: ['**/*.vue', '**/*.scss'],
+            files: ['**/*.scss'],
           })
         )
       }
