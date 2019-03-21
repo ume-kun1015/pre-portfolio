@@ -2,39 +2,42 @@ version: 2
 jobs:
   build:
     docker:
-    - image: circleci/node:10.14.0
+      - image: circleci/node:10.14.0
     steps:
-    - checkout
-    - restore_cache:
-        keys:
-        - npm-{{ checksum "package.json" }}
-    - run: npm install
-    - save_cache:
-        paths:
-        - node_modules
-        key: npm-{{ checksum "package.json" }}
-    - run: npm run lint
+      - checkout
+      - restore_cache:
+          keys:
+            - npm-{{ checksum "package.json" }}
+      - run:
+          command: linting
+          name: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: npm-{{ checksum "package.json" }}
+      - run:
+          name: installng local dependencies
+          command: npm run lint
 
   deploy:
     docker:
-    - image: circleci/node:10.14.0
+      - image: circleci/node:10.14.0
     steps:
-    - checkout
-    - restore_cache:
-        keys:
-        - npm-{{ checksum "package.json" }}
-    - run: npm install
+      - checkout
+      - restore_cache:
+          keys:
+            - npm-{{ checksum "package.json" }}
 
 workflows:
   version: 2
   build-deploy:
     jobs:
-    - build
-    - deploy:
-        requires:
-        - build
-        filters:
-          branches:
-            only:
-              - master
-              - develop
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
+                - develop
