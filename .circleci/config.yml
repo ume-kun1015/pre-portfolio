@@ -26,6 +26,9 @@ jobs:
             - npm-{{ checksum "package.json" }}
       - run: npm run build
       - run:
+          name: install packages in functions directory
+          command: cd functions && npm install && cd ../
+      - run:
           name: clean functions ssr directory
           command: npm run functions:ssr:clean
       - run:
