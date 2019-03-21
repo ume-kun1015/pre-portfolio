@@ -15,7 +15,6 @@ jobs:
             - node_modules
           key: npm-{{ checksum "package.json" }}
       - run: npm run lint
-      - run: npm run build
 
   deploy:
     docker:
@@ -25,6 +24,7 @@ jobs:
       - restore_cache:
           keys:
             - npm-{{ checksum "package.json" }}
+      - run: npm run build
       - run:
           name: clean functions ssr directory
           command: npm run functions:ssr:clean
