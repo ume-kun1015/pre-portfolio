@@ -6,6 +6,7 @@ demo
 ### firebase
 .firebaserc
 .firebase
+.runtimeconfig.json
 
 ### Node template
 # Logs
