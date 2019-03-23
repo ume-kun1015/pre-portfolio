@@ -39,7 +39,6 @@ module.exports = {
    */
   plugins: [
     '~/plugins/constant.js',
-    '~/plugins/img.js',
     '~/plugins/meta-info.js',
     '~/plugins/portfolio-context.js',
     { src: '~/plugins/aos.js', ssr: false },

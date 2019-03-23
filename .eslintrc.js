@@ -53,5 +53,10 @@ module.exports = {
         semi: false,
       },
     ],
+    "vue/html-self-closing": ["error", {
+      "html": {
+        "void": "always",
+        }
+    }],
   },
 }
