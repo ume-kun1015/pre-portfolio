@@ -20,9 +20,10 @@ function handleRequest(req, res) {
   })
 }
 
-if (process.env.PORTFOLIO_ENV === 'dev') {
-  require('dotenv').config({ path: '../.env' })
-  app.all('/*', basicAuth(process.env.BASIC_AUTH_USERNAME, process.env.BASIC_AUTH_PASSWORD))
+const devPortfolioEnvs = functions.config().dev_portfolio
+
+if (devPortfolioEnvs.portfolio_env === 'dev') {
+  app.all('/*', basicAuth(devPortfolioEnvs.basic_auth_username, devPortfolioEnvs.basic_auth_password))
 }
 
 app.use(handleRequest)
