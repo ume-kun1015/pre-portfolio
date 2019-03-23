@@ -37,12 +37,14 @@ jobs:
       - run:
           name: firebase deploy
           command: |
+            portfolio_env='dev'
             project_id=$DEV_PROJECT_ID
             if [ "$CIRCLE_BRANCH" = "master" ]; then
+              portfolio_env='prd'
               project_id=$PROJECT_ID
             fi
 
-            ./scripts/deploy-firebase.sh -p $project_id -t $FIREBASE_TOKEN
+            ./scripts/deploy-firebase.sh -p $project_id -t $FIREBASE_TOKEN $portfolio_env
 
 workflows:
   version: 2

@@ -1,6 +1,7 @@
 const functions = require('firebase-functions')
 const { Nuxt } = require('nuxt')
 const express = require('express')
+const basicAuth = require('basic-auth-connect')
 const app = express()
 
 const config = {
@@ -17,6 +18,11 @@ function handleRequest(req, res) {
       promise.then(resolve).catch(reject)
     })
   })
+}
+
+if (process.env.PORTFOLIO_ENV === 'dev') {
+  require('dotenv').config({ path: '../.env' })
+  app.all('/*', basicAuth(process.env.BASIC_AUTH_USERNAME, process.env.BASIC_AUTH_PASSWORD))
 }
 
 app.use(handleRequest)
