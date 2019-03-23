@@ -28,7 +28,5 @@ if [ -z $token -o -z $project_id ]; then
   usage
 fi
 
-env=$1
-
 $(npm bin)/firebase use $project_id
-PORTFOLIO_ENV=$env $(npm bin)/firebase deploy --token $token
+$(npm bin)/firebase deploy --token $token

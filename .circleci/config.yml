@@ -41,10 +41,8 @@ jobs:
           name: firebase deploy
           command: |
             if [ "$CIRCLE_BRANCH" = "master" ]; then
-              portfolio_env='prd'
               project_id=$PROJECT_ID
             else
-              portfolio_env='dev'
               project_id=$DEV_PROJECT_ID
               firebase functions:config:set \
                 dev_portfolio.portfolio_env=dev \
@@ -52,7 +50,7 @@ jobs:
                 dev_portfolio.basic_auth_password=$BASIC_AUTH_PASSWORD
             fi
 
-            ./scripts/deploy-firebase.sh -p $project_id -t $FIREBASE_TOKEN $portfolio_env
+            ./scripts/deploy-firebase.sh -p $project_id -t $FIREBASE_TOKEN
 
 workflows:
   version: 2
