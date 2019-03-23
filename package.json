@@ -12,7 +12,8 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
-    "functions:ssr:clean": "rm -rf functions/ssr && mkdir -p functions/ssr"
+    "functions:ssr:clean": "rm -rf functions/ssr && mkdir -p functions/ssr",
+    "firebase:functions:config:set": "firebase functions:config:set"
   },
   "lint-staged": {
     "*.{js,vue}": [
