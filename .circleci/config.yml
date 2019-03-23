@@ -27,7 +27,10 @@ jobs:
       - run: npm run build
       - run:
           name: install packages in functions directory
-          command: cd functions && npm install && cd ../
+          command: cd functions && npm install
+      - run:
+          name: get back to root directory
+          command: cd ../
       - run:
           name: clean functions ssr directory
           command: npm run functions:ssr:clean
