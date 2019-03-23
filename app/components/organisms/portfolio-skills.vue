@@ -1,5 +1,5 @@
 <template>
-  <div class="skills-section-wrapper">
+  <div class="portfolio-skills">
     <div class="skills-title-wrapper">
       <div class="skills-text">
         <h2>スキル</h2>
@@ -9,8 +9,8 @@
 </template>
 
 <style lang="scss" scoped>
-.skills-section-wrapper {
-  margin: 1em 0;
+.portfolio-skills {
+  margin: 3em 0;
 
   .skills-title-wrapper {
     max-width: $breakpoint-pc-large;
@@ -32,9 +32,8 @@
     }
   }
 
-  .skills-chart-wrapper {
-    display: flex;
-    justify-content: center;
+  @media only screen and (max-width: $breakpoint-mobile) {
+    margin: 1em 0;
   }
 }
 </style>

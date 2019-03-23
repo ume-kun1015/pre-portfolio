@@ -16,15 +16,19 @@
         <portfolio-logo />
       </section>
     </section>
+
+    <portfolio-skills />
   </div>
 </template>
 
 <script>
 import PortfolioLogo from '~/components/atoms/portfolio-logo.vue'
+import PortfolioSkills from '~/components/organisms/portfolio-skills.vue'
 
 export default {
   components: {
     PortfolioLogo,
+    PortfolioSkills,
   },
   head() {
     return {
@@ -42,10 +46,8 @@ export default {
 
 <style lang="scss" scoped>
 .portfolio-top {
-  height: calc(100vh - 100px);
-
   .introduction-section-wrapper {
-    height: 100%;
+    height: 450px;
     background: $dark_navy;
 
     .introduction-wrapper {
