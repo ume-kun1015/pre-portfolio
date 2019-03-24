@@ -1,4 +1,3 @@
-const StylelintPlugin = require('stylelint-webpack-plugin')
 const portfolioContext = require('./portfolio.config.js')
 
 module.exports = {
@@ -99,10 +98,10 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/,
         })
+        const StylelintPlugin = require('stylelint-webpack-plugin')
         config.plugins.push(
-          // FIX 20190321 don't pass vue extension to files. build does not work
           new StylelintPlugin({
-            files: ['app/**/*.scss'],
+            files: ['app/**/*.vue', 'app/**/*.scss'],
           })
         )
       }
