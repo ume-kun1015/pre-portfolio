@@ -5,12 +5,37 @@
         <h2>スキル</h2>
       </div>
     </div>
+
+    <ul>
+      <li
+        v-for="(skill, index) in skills"
+        :key="index"
+      >
+        <portofolio-progress-bar :description="skill.description" :width="skill.width" />
+      </li>
+    </ul>
   </div>
 </template>
+
+<script>
+import PortofolioProgressBar from '~/components/molecules/portofolio-progress-bar.vue'
+
+export default {
+  components: {
+    PortofolioProgressBar,
+  },
+  data() {
+    return {
+      skills: [{ description: 'golang', width: '80' }, { description: 'ruby', width: '75' }, { description: 'php', width: '65' }],
+    }
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 .portfolio-skills {
   margin: 3em 0;
+  padding: 0 3.2%;
 
   .skills-title-wrapper {
     max-width: $breakpoint-pc-large;
@@ -20,6 +45,10 @@
       color: $dark_navy;
       text-align: center;
       margin-bottom: 3rem;
+
+      @media only screen and (max-width: $breakpoint-mobile) {
+        margin: 1em 0;
+      }
     }
 
     .skills-text::after {
