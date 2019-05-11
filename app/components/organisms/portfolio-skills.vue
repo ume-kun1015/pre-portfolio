@@ -11,18 +11,18 @@
         v-for="(skill, index) in skills"
         :key="index"
       >
-        <portofolio-progress-bar :description="skill.description" :width="skill.width" />
+        <portfolio-progress-bar :description="skill.description" :width="skill.width" />
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import PortofolioProgressBar from '~/components/molecules/portofolio-progress-bar.vue'
+import PortfolioProgressBar from '~/components/molecules/portfolio-progress-bar.vue'
 
 export default {
   components: {
-    PortofolioProgressBar,
+    PortfolioProgressBar,
   },
   data() {
     return {
