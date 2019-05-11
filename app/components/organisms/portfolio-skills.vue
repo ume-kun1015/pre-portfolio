@@ -1,66 +1,41 @@
 <template>
-  <section class="skills-section-wrapper" data-aos="fade">
+  <div class="portfolio-skills">
     <div class="skills-title-wrapper">
       <div class="skills-text">
         <h2>スキル</h2>
       </div>
     </div>
-    <div class="skills-chart-wrapper">
-      <portolio-doughnut-chart :data="programmingLanguageChartData" :options="programmingLanguageChartOption" />
-      <portolio-doughnut-chart :data="awsServiceChartData" :options="awsServiceChartOption" />
-    </div>
-  </section>
+
+    <ul>
+      <li
+        v-for="(skill, index) in skills"
+        :key="index"
+      >
+        <portfolio-progress-bar :description="skill.description" :width="skill.width" />
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
-export default {
-  data() {
-    const language = this.$constant.LANGUAGE
-    const awsService = this.$constant.AWS_SERVICE
+import PortfolioProgressBar from '~/components/molecules/portfolio-progress-bar.vue'
 
+export default {
+  components: {
+    PortfolioProgressBar,
+  },
+  data() {
     return {
-      programmingLanguageChartData: {
-        labels: language.map(lang => lang.NAME),
-        datasets: [
-          {
-            backgroundColor: language.map(lang => lang.COLOR),
-            data: language.map(lang => lang.RATIO),
-          },
-        ],
-      },
-      programmingLanguageChartOption: {
-        maintainAspectRatio: false,
-        title: {
-          display: true,
-          text: 'プログラミング言語',
-          fontSize: 14,
-        },
-      },
-      awsServiceChartData: {
-        labels: awsService.map(aws => aws.NAME),
-        datasets: [
-          {
-            backgroundColor: awsService.map(aws => aws.COLOR),
-            data: new Array(awsService.length).fill(awsService.length / 100),
-          },
-        ],
-      },
-      awsServiceChartOption: {
-        maintainAspectRatio: false,
-        title: {
-          display: true,
-          text: '使用したことあるAWSサービス',
-          fontSize: 14,
-        },
-      },
+      skills: [{ description: 'golang', width: '80' }, { description: 'ruby', width: '75' }, { description: 'php', width: '65' }],
     }
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.skills-section-wrapper {
-  padding: 5em 0;
+.portfolio-skills {
+  margin: 3em 0;
+  padding: 0 3.2%;
 
   .skills-title-wrapper {
     max-width: $breakpoint-pc-large;
@@ -70,6 +45,10 @@ export default {
       color: $dark_navy;
       text-align: center;
       margin-bottom: 3rem;
+
+      @media only screen and (max-width: $breakpoint-mobile) {
+        margin: 1em 0;
+      }
     }
 
     .skills-text::after {
@@ -82,9 +61,8 @@ export default {
     }
   }
 
-  .skills-chart-wrapper {
-    display: flex;
-    justify-content: center;
+  @media only screen and (max-width: $breakpoint-mobile) {
+    margin: 1em 0;
   }
 }
 </style>
