@@ -8,7 +8,7 @@
     <div class="strengths-items-wrapper">
       <ul class="strengths-items">
         <li v-for="(strength, index) in strengths" :key="index">
-          <portfolio-strength-item :summary="strength.summary" :description="strength.description" :icon-style="strength.iconStyle" />
+          <portfolio-strength-item-card :summary="strength.summary" :description="strength.description" :icon-style="strength.iconStyle" />
         </li>
       </ul>
     </div>
@@ -16,18 +16,18 @@
 </template>
 
 <script>
-import PortfolioStrengthItem from '~/components/molecules/portfolio-strength-item.vue'
+import PortfolioStrengthItemCard from '~/components/molecules/portfolio-strength-item-card.vue'
 
 export default {
   components: {
-    PortfolioStrengthItem,
+    PortfolioStrengthItemCard,
   },
   data() {
     return {
       strengths: [
         {
-          summary: 'キャッチアップし、改良を加えられる',
-          description: '経験がないことに対しても自分のものにすべく努力し、その上で自ら改良を加えることができる。',
+          summary: 'キャッチアップし改良を加えられる',
+          description: '経験がないことに対しても、自分のものにすべく努力し、その上で自ら改良を加えることができる。',
           iconStyle: ['fab', 'hubspot'],
         },
         {
@@ -36,9 +36,8 @@ export default {
           iconStyle: ['far', 'lightbulb'],
         },
         {
-          summary: '一通りの開発工程を経験していること',
-          description:
-            '他職種の依頼に対して、自ら仕様/設計/テストを考案、実行し、フロント/サーバーエンド/インフラで必要な開発を適宜行い、リリースを行うことができること',
+          summary: 'フルスタックエンジニア',
+          description: 'アプリケーションをリリースするまでの工程を知り、フロント/サーバーエンド/インフラサイドで適宜開発を行えること',
           iconStyle: ['far', 'clipboard'],
         },
       ],
@@ -75,11 +74,16 @@ export default {
 
     .strengths-items {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
 
       li {
         width: 33%;
-        margin: 0 10px;
+        padding: 0 3.2%;
+
+        @media only screen and (max-width: $breakpoint-mobile) {
+          width: 90%;
+        }
       }
     }
   }

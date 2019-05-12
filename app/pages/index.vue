@@ -18,17 +18,21 @@
     </section>
 
     <portfolio-skills />
+  
+    <portfolio-strengths />
   </div>
 </template>
 
 <script>
 import PortfolioLogo from '~/components/atoms/portfolio-logo.vue'
 import PortfolioSkills from '~/components/organisms/portfolio-skills.vue'
+import PortfolioStrengths from '~/components/organisms/portfolio-strengths.vue'
 
 export default {
   components: {
     PortfolioLogo,
     PortfolioSkills,
+    PortfolioStrengths,
   },
   head() {
     return {
