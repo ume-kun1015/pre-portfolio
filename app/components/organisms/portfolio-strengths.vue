@@ -26,8 +26,8 @@ export default {
     return {
       strengths: [
         {
-          summary: 'キャッチアップし、改良を加えられる',
-          description: '経験がないことに対しても自分のものにすべく努力し、その上で自ら改良を加えることができる。',
+          summary: 'キャッチアップし改良を加えられる',
+          description: '経験がないことに対しても、自分のものにすべく努力し、その上で自ら改良を加えることができる。',
           iconStyle: ['fab', 'hubspot'],
         },
         {
@@ -36,9 +36,8 @@ export default {
           iconStyle: ['far', 'lightbulb'],
         },
         {
-          summary: '一通りの開発工程を経験していること',
-          description:
-            '他職種の依頼に対して、自ら仕様/設計/テストを考案、実行し、フロント/サーバーエンド/インフラで必要な開発を適宜行い、リリースを行うことができること',
+          summary: 'フルスタックエンジニア',
+          description: 'アプリケーションをリリースするまでの工程を知り、フロント/サーバーエンド/インフラサイドで適宜開発を行えること',
           iconStyle: ['far', 'clipboard'],
         },
       ],
