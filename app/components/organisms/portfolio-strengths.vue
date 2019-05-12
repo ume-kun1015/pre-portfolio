@@ -8,7 +8,7 @@
     <div class="strengths-items-wrapper">
       <ul class="strengths-items">
         <li v-for="(strength, index) in strengths" :key="index">
-          <portfolio-strength-item :summary="strength.summary" :description="strength.description" :icon-style="strength.iconStyle" />
+          <portfolio-strength-item-card :summary="strength.summary" :description="strength.description" :icon-style="strength.iconStyle" />
         </li>
       </ul>
     </div>
@@ -16,11 +16,11 @@
 </template>
 
 <script>
-import PortfolioStrengthItem from '~/components/molecules/portfolio-strength-item.vue'
+import PortfolioStrengthItemCard from '~/components/molecules/portfolio-strength-item-card.vue'
 
 export default {
   components: {
-    PortfolioStrengthItem,
+    PortfolioStrengthItemCard,
   },
   data() {
     return {
