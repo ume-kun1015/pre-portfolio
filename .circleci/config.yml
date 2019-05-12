@@ -45,7 +45,7 @@ jobs:
             else
               project_id=$DEV_PROJECT_ID
               npm run firebase:functions:config:set \
-              -- dev_portfolio.portfolio_env=dev \
+              -- --project $project_id dev_portfolio.portfolio_env=dev  \
               dev_portfolio.basic_auth_username=$BASIC_AUTH_USERNAME \
               dev_portfolio.basic_auth_password=$BASIC_AUTH_PASSWORD
             fi
