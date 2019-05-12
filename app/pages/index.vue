@@ -3,12 +3,14 @@
     <section class="introduction-section-wrapper">
       <div class="introduction-wrapper">
         <div class="introduction-text">
-          <h1>
-            アカペラとスノボが大好きなエンジニア
-            <br />
+          <p class="text-h2">
+            アカペラとスノボが<br />
+            大好きなエンジニア<br />
             利用するのに場所や時間を選ばない <br />
-            インターネット上で誰かの役に立ててばいいなと思いながらサービス作りしてます
-          </h1>
+            インターネット上で <br /> 
+            誰かの役に立ててばいいなと<br />
+            思いながらサービス作りしてます
+          </p>
         </div>
       </div>
 
@@ -67,7 +69,7 @@ export default {
         width: 70%;
         margin: 0 auto;
 
-        h1 {
+        p {
           text-align: center;
         }
       }
@@ -84,10 +86,10 @@ export default {
     .introduction-section-wrapper {
       .introduction-wrapper {
         .introduction-text {
-          width: 75%;
+          width: 85%;
           height: 300px;
 
-          h1 {
+          p {
             word-wrap: break-word;
             font-size: 1.5em;
           }
