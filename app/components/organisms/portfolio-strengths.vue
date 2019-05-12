@@ -75,11 +75,16 @@ export default {
 
     .strengths-items {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
 
       li {
         width: 33%;
-        margin: 0 10px;
+        padding: 0 3.2%;
+
+        @media only screen and (max-width: $breakpoint-mobile) {
+          width: 90%;
+        }
       }
     }
   }

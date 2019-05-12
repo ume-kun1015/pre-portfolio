@@ -36,7 +36,11 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2em 0;
+  padding: 1em 1em 2em;
+  margin: 2em 0;
+  box-shadow: 0 10px 16px 0 rgba(226, 226, 226, 0.5);
+  border-radius: 50px;
+  height: 300px;
 
   .strength-icon {
     color: $blue;
@@ -56,10 +60,12 @@ export default {
   }
 
   .strength-summary {
+    color: $blue;
     margin: 10px;
   }
 
   .strength-description {
+    color: $dark_navy;
     margin: 10px;
   }
 }
