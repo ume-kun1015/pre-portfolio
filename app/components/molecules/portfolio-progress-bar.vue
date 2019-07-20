@@ -22,7 +22,20 @@ export default {
     },
   },
   mounted() {
-    this.$refs.bar.style.width = `${this.width}%`
+    if (process.browser) {
+      const observeFunc = entry => {
+        if (entry.isIntersecting) {
+          this.activateProgress()
+        }
+      }
+
+      new IntersectionObserver(entries => entries.forEach(observeFunc)).observe(this.$refs.bar)
+    }
+  },
+  methods: {
+    activateProgress() {
+      this.$refs.bar.style.width = `${this.skill.percent}%`
+    },
   },
 }
 </script>
