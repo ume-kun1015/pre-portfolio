@@ -1,6 +1,9 @@
 <template>
   <div class="portfolio-progress-bar">
-    <p class="name">{{ name }}</p>
+    <div class="portfolio-progress-props">
+      <p class="name">{{ skill.name }}: {{ skill.years }}</p>
+      <p class="percent">{{ skill.percent }}%</p>
+    </div>
 
     <div class="progress">
       <!-- eslint-disable vue/html-self-closing -->
@@ -13,13 +16,9 @@
 <script>
 export default {
   props: {
-    name: {
-      type: String,
-      default: '',
-    },
-    width: {
-      type: String,
-      default: '100',
+    skill: {
+      type: Object,
+      default: () => {},
     },
   },
   mounted() {
@@ -34,10 +33,15 @@ export default {
   padding: 10px;
   background-color: white;
 
-  .name {
-    font-size: 13px;
-    font-weight: 700;
+  .portfolio-progress-props {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 10px;
+
+    p {
+      font-size: 13px;
+      font-weight: 700;
+    }
   }
 
   .progress {
