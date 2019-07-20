@@ -1,6 +1,6 @@
 <template>
   <div class="portfolio-progress-bar">
-    <p class="description">{{ description }}</p>
+    <p class="name">{{ name }}</p>
 
     <div class="progress">
       <!-- eslint-disable vue/html-self-closing -->
@@ -13,7 +13,7 @@
 <script>
 export default {
   props: {
-    description: {
+    name: {
       type: String,
       default: '',
     },
@@ -34,7 +34,7 @@ export default {
   padding: 10px;
   background-color: white;
 
-  .description {
+  .name {
     font-size: 13px;
     font-weight: 700;
     margin-bottom: 10px;
