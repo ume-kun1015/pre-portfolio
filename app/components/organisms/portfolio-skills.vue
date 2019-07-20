@@ -11,7 +11,7 @@
         v-for="(skill, index) in skills"
         :key="index"
       >
-        <portfolio-progress-bar :description="skill.description" :width="skill.width" />
+        <portfolio-progress-bar :skill="skill" />
       </li>
     </ul>
   </div>
@@ -26,7 +26,28 @@ export default {
   },
   data() {
     return {
-      skills: [{ description: 'golang', width: '80' }, { description: 'ruby', width: '75' }, { description: 'php', width: '65' }],
+      skills: [
+        {
+          name: 'golang',
+          years: '2年',
+          percent: 80,
+        },
+        {
+          name: 'ruby',
+          years: '2年',
+          percent: 75,
+        },
+        {
+          name: 'php',
+          years: '1年',
+          percent: 65,
+        },
+        {
+          name: 'nodejs',
+          years: '1.5年',
+          percent: 75,
+        },
+      ],
     }
   },
 }

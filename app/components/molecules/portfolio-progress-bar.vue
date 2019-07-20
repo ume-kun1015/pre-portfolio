@@ -1,6 +1,9 @@
 <template>
   <div class="portfolio-progress-bar">
-    <p class="description">{{ description }}</p>
+    <div class="portfolio-progress-props">
+      <p class="name">{{ skill.name }}: {{ skill.years }}</p>
+      <p class="percent">{{ skill.percent }}%</p>
+    </div>
 
     <div class="progress">
       <!-- eslint-disable vue/html-self-closing -->
@@ -13,17 +16,26 @@
 <script>
 export default {
   props: {
-    description: {
-      type: String,
-      default: '',
-    },
-    width: {
-      type: String,
-      default: '100',
+    skill: {
+      type: Object,
+      default: () => {},
     },
   },
   mounted() {
-    this.$refs.bar.style.width = `${this.width}%`
+    if (process.browser) {
+      const observeFunc = entry => {
+        if (entry.isIntersecting) {
+          this.activateProgress()
+        }
+      }
+
+      new IntersectionObserver(entries => entries.forEach(observeFunc)).observe(this.$refs.bar)
+    }
+  },
+  methods: {
+    activateProgress() {
+      this.$refs.bar.style.width = `${this.skill.percent}%`
+    },
   },
 }
 </script>
@@ -34,10 +46,15 @@ export default {
   padding: 10px;
   background-color: white;
 
-  .description {
-    font-size: 13px;
-    font-weight: 700;
+  .portfolio-progress-props {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 10px;
+
+    p {
+      font-size: 13px;
+      font-weight: 700;
+    }
   }
 
   .progress {
