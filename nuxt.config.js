@@ -21,6 +21,7 @@ module.exports = {
       { hid: 'robots', name: 'robots', content: 'index, follow' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/s/images/logo.jpg' }],
+    script: [{ src: 'https://polyfill.io/v3/polyfill.min.js?flags=gated&features=IntersectionObserver', defer: true }],
   },
 
   /*
