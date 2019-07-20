@@ -31,13 +31,8 @@ export default {
           iconStyle: ['fab', 'hubspot'],
         },
         {
-          summary: '全体を把握した上で最適な解を導く',
-          description: '複数のマイクロサービスが集まった大規模なサービスの中でも、素早く状況を整理し、効率が良い方法で解を導け出せる。',
-          iconStyle: ['far', 'lightbulb'],
-        },
-        {
           summary: 'フルスタックエンジニア',
-          description: 'アプリケーションをリリースするまでの工程を知り、フロント/サーバーエンド/インフラサイドで適宜開発を行えること',
+          description: 'アプリケーションをリリースするまでの工程を知り、フロント/サーバーエンド/インフラサイドで適宜開発を行える。',
           iconStyle: ['far', 'clipboard'],
         },
       ],
