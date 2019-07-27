@@ -36,6 +36,7 @@ export default {
   data() {
     return {
       displayed: false,
+      intersectionObserver: null,
     }
   },
 
@@ -47,7 +48,12 @@ export default {
       }
     }
 
-    new IntersectionObserver(entries => entries.forEach(observeFunc), observeOptions).observe(this.$refs.portfolioStrengthItemCard)
+    this.intersectionObserver = new IntersectionObserver(entries => entries.forEach(observeFunc), observeOptions)
+    this.intersectionObserver.observe(this.$refs.portfolioStrengthItemCard)
+  },
+
+  beforeDestroy() {
+    this.intersectionObserver.disconnect()
   },
 
   methods: {

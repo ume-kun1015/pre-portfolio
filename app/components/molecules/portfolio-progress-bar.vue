@@ -21,6 +21,13 @@ export default {
       default: () => {},
     },
   },
+
+  data() {
+    return {
+      intersectionObserver: null,
+    }
+  },
+
   mounted() {
     const observeFunc = entry => {
       if (entry.isIntersecting) {
@@ -28,8 +35,14 @@ export default {
       }
     }
 
-    new IntersectionObserver(entries => entries.forEach(observeFunc)).observe(this.$refs.bar)
+    this.intersectionObserver = new IntersectionObserver(entries => entries.forEach(observeFunc))
+    this.intersectionObserver.observe(this.$refs.bar)
   },
+
+  beforeDestroy() {
+    this.intersectionObserver.disconnect()
+  },
+
   methods: {
     activateProgress() {
       this.$refs.bar.style.width = `${this.skill.percent}%`
