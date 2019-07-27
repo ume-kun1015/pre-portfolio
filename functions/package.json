@@ -26,9 +26,11 @@
     "firebase-admin": "7.0.0",
     "firebase-functions": "2.2.0",
     "nuxt": "2.8.1",
-    "nuxt-fontawesome": "0.4.0"
+    "nuxt-fontawesome": "0.4.0",
+    "ts-node": "8.3.0"
   },
   "devDependencies": {
+    "@nuxt/typescript": "2.8.1",
     "@nuxtjs/style-resources": "0.1.2",
     "babel-eslint": "10.0.1",
     "eslint": "5.15.1",
