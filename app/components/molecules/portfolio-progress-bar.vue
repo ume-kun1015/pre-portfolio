@@ -22,15 +22,13 @@ export default {
     },
   },
   mounted() {
-    if (process.browser) {
-      const observeFunc = entry => {
-        if (entry.isIntersecting) {
-          this.activateProgress()
-        }
+    const observeFunc = entry => {
+      if (entry.isIntersecting) {
+        this.activateProgress()
       }
-
-      new IntersectionObserver(entries => entries.forEach(observeFunc)).observe(this.$refs.bar)
     }
+
+    new IntersectionObserver(entries => entries.forEach(observeFunc)).observe(this.$refs.bar)
   },
   methods: {
     activateProgress() {

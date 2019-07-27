@@ -40,17 +40,14 @@ export default {
   },
 
   mounted() {
-    if (process.browser) {
-      const observeFunc = entry => {
-        if (entry.isIntersecting) {
-          this.fadeIn()
-        }
+    const observeOptions = { rootMargin: '-150px' }
+    const observeFunc = entry => {
+      if (entry.isIntersecting) {
+        this.fadeIn()
       }
-
-      const observeOptions = { rootMargin: '-150px' }
-
-      new IntersectionObserver(entries => entries.forEach(observeFunc), observeOptions).observe(this.$refs.portfolioStrengthItemCard)
     }
+
+    new IntersectionObserver(entries => entries.forEach(observeFunc), observeOptions).observe(this.$refs.portfolioStrengthItemCard)
   },
 
   methods: {
