@@ -13,22 +13,23 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    skill: {
-      type: Object,
-      default: () => {},
-    },
-  },
+<script lang="ts">
+import { Component, Vue, Prop } from 'nuxt-property-decorator'
 
-  data() {
-    return {
-      intersectionObserver: null,
-    }
-  },
+interface Skill {
+  name: string
+  years: string
+  percent: number
+}
 
-  mounted() {
+@Component
+export default class ProtolioProgressBar extends Vue {
+  intersectionObserver: IntersectionObserver | null = null
+
+  @Prop({ type: Object, default: () => {} })
+  skill!: Skill
+
+  mounted(): void {
     const observeFunc = entry => {
       if (entry.isIntersecting) {
         this.activateProgress()
@@ -36,18 +37,16 @@ export default {
     }
 
     this.intersectionObserver = new IntersectionObserver(entries => entries.forEach(observeFunc))
-    this.intersectionObserver.observe(this.$refs.bar)
-  },
+    if (this.intersectionObserver) this.intersectionObserver.observe(this.$refs.bar as HTMLElement)
+  }
 
-  beforeDestroy() {
-    this.intersectionObserver.disconnect()
-  },
+  beforeDestroy(): void {
+    if (this.intersectionObserver) this.intersectionObserver.disconnect()
+  }
 
-  methods: {
-    activateProgress() {
-      this.$refs.bar.style.width = `${this.skill.percent}%`
-    },
-  },
+  activateProgress(): void {
+    ;(this.$refs.bar as HTMLElement).style.width = `${this.skill.percent}%`
+  }
 }
 </script>
 
