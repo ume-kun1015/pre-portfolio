@@ -17,39 +17,40 @@
   </div>
 </template>
 
-<script>
-import PortfolioProgressBar from '~/components/molecules/portfolio-progress-bar.vue'
+<script lang="ts">
+import { Skill } from '../../entities/skill'
+import { Component, Vue } from 'nuxt-property-decorator'
 
-export default {
+import PortfolioProgressBar from '../molecules/portfolio-progress-bar.vue'
+
+@Component({
   components: {
     PortfolioProgressBar,
   },
-  data() {
-    return {
-      skills: [
-        {
-          name: 'golang',
-          years: '2年',
-          percent: 80,
-        },
-        {
-          name: 'ruby',
-          years: '2年',
-          percent: 75,
-        },
-        {
-          name: 'php',
-          years: '1年',
-          percent: 65,
-        },
-        {
-          name: 'nodejs',
-          years: '1.5年',
-          percent: 75,
-        },
-      ],
-    }
-  },
+})
+export default class PortfolioSkills extends Vue {
+  skills: Skill[] = [
+    {
+      name: 'golang',
+      years: '2年',
+      percent: 80,
+    },
+    {
+      name: 'ruby',
+      years: '2年',
+      percent: 75,
+    },
+    {
+      name: 'php',
+      years: '1年',
+      percent: 65,
+    },
+    {
+      name: 'nodejs',
+      years: '1.5年',
+      percent: 75,
+    },
+  ]
 }
 </script>
 

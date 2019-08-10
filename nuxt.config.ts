@@ -37,7 +37,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/constant.js', '~/plugins/meta-info.js', '~/plugins/portfolio-context.js'],
+  plugins: ['~/plugins/constant.js', '~/plugins/meta-info.ts', '~/plugins/portfolio-context.js'],
 
   /*
    ** Nuxt.js modules

@@ -4,13 +4,12 @@
   </a>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      githubIconClass: ['fab', 'github'],
-    }
-  },
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator'
+
+@Component
+export default class PortfolioGithubBtn extends Vue {
+  githubIconClass: String[] = ['fab', 'github']
 }
 </script>
 

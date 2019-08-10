@@ -25,28 +25,30 @@
   </div>
 </template>
 
-<script>
-import PortfolioLogo from '~/components/atoms/portfolio-logo.vue'
-import PortfolioSkills from '~/components/organisms/portfolio-skills.vue'
-import PortfolioStrengths from '~/components/organisms/portfolio-strengths.vue'
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator'
 
-export default {
+import PortfolioLogo from '../components/atoms/portfolio-logo.vue'
+import PortfolioSkills from '../components/organisms/portfolio-skills.vue'
+import PortfolioStrengths from '../components/organisms/portfolio-strengths.vue'
+
+@Component({
   components: {
     PortfolioLogo,
     PortfolioSkills,
     PortfolioStrengths,
   },
+})
+export default class TopPage extends Vue {
+  description: String =
+    'アカペラとスノボが大好きなエンジニア。メインはサーバーサイド。最近はNuxtjsでの業務でフロントにはまり、フロントサイドやデザインへ転向中。'
+
   head() {
     return {
       title: 'トップページ',
       meta: [this.$metaInfo.getDescription(this.description), this.$metaInfo.getKeywords('ポートフォリオ, portfolio, nuxtjs, romukey')],
     }
-  },
-  data() {
-    return {
-      description: `アカペラとスノボが大好きなエンジニア。メインはサーバーサイド。最近はNuxtjsでの業務でフロントにはまり、フロントサイドやデザインへ転向中。`,
-    }
-  },
+  }
 }
 </script>
 

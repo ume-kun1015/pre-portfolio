@@ -4,6 +4,13 @@
   </nuxt-link>
 </template>
 
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator'
+
+@Component
+export default class PortofolioLogoBtn extends Vue {}
+</script>
+
 <style lang="scss" scoped>
 .portfolio-logo-btn {
   display: block;

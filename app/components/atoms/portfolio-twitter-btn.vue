@@ -4,13 +4,12 @@
   </a>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      twitterIconClass: ['fab', 'twitter'],
-    }
-  },
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator'
+
+@Component
+export default class PortfolioTwitterBtn extends Vue {
+  twitterIconClass: String[] = ['fab', 'twitter']
 }
 </script>
 

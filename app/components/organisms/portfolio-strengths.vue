@@ -15,29 +15,30 @@
   </section>
 </template>
 
-<script>
-import PortfolioStrengthItemCard from '~/components/molecules/portfolio-strength-item-card.vue'
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator'
 
-export default {
+import { Strength } from '../../entities/strength'
+import PortfolioStrengthItemCard from '../molecules/portfolio-strength-item-card.vue'
+
+@Component({
   components: {
     PortfolioStrengthItemCard,
   },
-  data() {
-    return {
-      strengths: [
-        {
-          summary: 'キャッチアップし改良を加えられる',
-          description: '経験がないことに対しても、自分のものにすべく努力し、その上で自ら改良を加えることができる。',
-          iconStyle: ['fab', 'hubspot'],
-        },
-        {
-          summary: 'フルスタックエンジニア',
-          description: 'アプリケーションをリリースするまでの工程を知り、フロント/サーバーエンド/インフラサイドで適宜開発を行える。',
-          iconStyle: ['far', 'clipboard'],
-        },
-      ],
-    }
-  },
+})
+export default class PortfolioStrengths extends Vue {
+  strengths: Strength[] = [
+    {
+      summary: 'キャッチアップし改良を加えられる',
+      description: '経験がないことに対しても、自分のものにすべく努力し、その上で自ら改良を加えることができる。',
+      iconStyle: ['fab', 'hubspot'],
+    },
+    {
+      summary: 'フルスタックエンジニア',
+      description: 'アプリケーションをリリースするまでの工程を知り、フロント/サーバーエンド/インフラサイドで適宜開発を行える。',
+      iconStyle: ['far', 'clipboard'],
+    },
+  ]
 }
 </script>
 

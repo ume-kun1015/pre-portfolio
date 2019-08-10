@@ -16,31 +16,24 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    summary: {
-      type: String,
-      default: '',
-    },
-    description: {
-      type: String,
-      default: '',
-    },
-    iconStyle: {
-      type: Array,
-      default: () => [],
-    },
-  },
+<script lang="ts">
+import { Component, Vue, Prop } from 'nuxt-property-decorator'
 
-  data() {
-    return {
-      displayed: false,
-      intersectionObserver: null,
-    }
-  },
+@Component
+export default class PortfolioStrengthItemCard extends Vue {
+  displayed: Boolean = false
+  intersectionObserver: IntersectionObserver | null = null
 
-  mounted() {
+  @Prop({ type: String, default: '' })
+  summary!: String
+
+  @Prop({ type: String, default: '' })
+  description!: String
+
+  @Prop({ type: Array, default: () => [] })
+  iconStyle!: String[]
+
+  mounted(): void {
     const observeOptions = { rootMargin: '-150px' }
     const observeFunc = entry => {
       if (entry.isIntersecting) {
@@ -49,18 +42,16 @@ export default {
     }
 
     this.intersectionObserver = new IntersectionObserver(entries => entries.forEach(observeFunc), observeOptions)
-    this.intersectionObserver.observe(this.$refs.portfolioStrengthItemCard)
-  },
+    if (this.intersectionObserver) this.intersectionObserver.observe(this.$refs.portfolioStrengthItemCard as HTMLElement)
+  }
 
-  beforeDestroy() {
-    this.intersectionObserver.disconnect()
-  },
+  beforeDestroy(): void {
+    if (this.intersectionObserver) this.intersectionObserver.disconnect()
+  }
 
-  methods: {
-    fadeIn() {
-      this.displayed = true
-    },
-  },
+  fadeIn(): void {
+    this.displayed = true
+  }
 }
 </script>
 
