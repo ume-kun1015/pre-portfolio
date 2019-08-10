@@ -71,6 +71,8 @@ module.exports = {
    */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    baseURL: portfolioContext.api.baseURL,
+    browserBaseURL: portfolioContext.api.browserBaseURL,
   },
 
   styleResources: {
