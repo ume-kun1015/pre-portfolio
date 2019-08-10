@@ -37,7 +37,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/constant.js', '~/plugins/meta-info.ts', '~/plugins/portfolio-context.js'],
+  plugins: ['~/plugins/constant.js', '~/plugins/meta-info.ts', '~/plugins/portfolio-context.js', '~/plugins/axios-error-handler.js'],
 
   /*
    ** Nuxt.js modules
@@ -71,11 +71,15 @@ module.exports = {
    */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    baseURL: portfolioContext.api.baseURL,
+    browserBaseURL: portfolioContext.api.browserBaseURL,
   },
 
   styleResources: {
     scss: './assets/styles/variables/*.scss',
   },
+
+  serverMiddleware: ['~/serverMiddleware/api/index.js'],
 
   /*
    ** Build configuration

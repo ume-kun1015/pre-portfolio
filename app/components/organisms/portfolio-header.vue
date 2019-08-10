@@ -25,7 +25,7 @@ export default class PortfolioHeader extends Vue {}
 
 <style lang="scss" scoped>
 .portfolio-header {
-  padding: 1em 2em;
+  padding: 1em 3.2%;
   background: $dark_navy;
   height: 100px;
 
