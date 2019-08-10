@@ -77,6 +77,8 @@ module.exports = {
     scss: './assets/styles/variables/*.scss',
   },
 
+  serverMiddleware: ['~/serverMiddleware/api/index.js'],
+
   /*
    ** Build configuration
    */
