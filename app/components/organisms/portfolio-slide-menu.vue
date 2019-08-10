@@ -46,15 +46,16 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator'
 import { mapGetters, mapMutations } from 'vuex'
 
-import PortfolioLogoBtn from '~/components/atoms/portfolio-logo-btn.vue'
-import PortfolioGithubBtn from '~/components/atoms/portfolio-github-btn.vue'
-import PortfolioTwitterBtn from '~/components/atoms/portfolio-twitter-btn.vue'
-import PortfolioTechBtn from '~/components/atoms/portfolio-tech-btn.vue'
+import PortfolioLogoBtn from '../atoms/portfolio-logo-btn.vue'
+import PortfolioGithubBtn from '../atoms/portfolio-github-btn.vue'
+import PortfolioTwitterBtn from '../atoms/portfolio-github-btn.vue'
+import PortfolioTechBtn from '../atoms/portfolio-tech-btn.vue'
 
-export default {
+@Component({
   components: {
     PortfolioLogoBtn,
     PortfolioGithubBtn,
@@ -70,10 +71,12 @@ export default {
     ...mapMutations({
       close: 'slide-menu/close',
     }),
-    openInNewTab(url) {
-      window.open(url)
-    },
   },
+})
+export default class PortfolioSlideMenu extends Vue {
+  openInNewTab(url) {
+    window.open(url)
+  }
 }
 </script>
 

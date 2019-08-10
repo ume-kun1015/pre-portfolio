@@ -4,13 +4,12 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      errorIconClass: ['fas', 'exclamation-circle'],
-    }
-  },
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator'
+
+@Component
+export default class PortfolioErrorBtn extends Vue {
+  errorIconClass: String[] = ['fas', 'exclamation-circle']
 }
 </script>
 

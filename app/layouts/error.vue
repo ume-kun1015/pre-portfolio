@@ -10,35 +10,33 @@
   </div>
 </template>
 
-<script>
-import PortfolioErrorBtn from '~/components/atoms/portfolio-error-btn.vue'
+<script lang="ts">
+import { Error } from '../entities/error'
+import { Component, Vue, Prop } from 'nuxt-property-decorator'
 
-export default {
+import PortfolioErrorBtn from '../components/atoms/portfolio-error-btn.vue'
+
+@Component({
   components: {
     PortfolioErrorBtn,
   },
-  props: {
-    error: {
-      type: Object,
-      default: () => {},
-    },
-  },
+})
+export default class ErrorLayout extends Vue {
+  notFoundMessage: String = 'ページが見つかりません'
+
+  @Prop({ type: Error, default: () => {} })
+  error!: Error
+
   head() {
     return {
       title: this.notFoundMessage,
       meta: [this.$metaInfo.getNoIndexNoFollow()],
     }
-  },
-  data() {
-    return {
-      notFoundMessage: 'ページが見つかりません',
-    }
-  },
-  computed: {
-    errorMessage() {
-      return this.error.statusCode === 404 ? this.notFoundMessage : this.error.message
-    },
-  },
+  }
+
+  private get errorMessage(): String {
+    return this.error.statusCode === 404 ? this.notFoundMessage : this.error.message
+  }
 }
 </script>
 

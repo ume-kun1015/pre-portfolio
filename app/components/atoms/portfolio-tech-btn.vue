@@ -4,13 +4,12 @@
   </nuxt-link>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      techIconClass: ['fas', 'desktop'],
-    }
-  },
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator'
+
+@Component
+export default class PortfolioTechBtn extends Vue {
+  techIconClass: String[] = ['fas', 'desktop']
 }
 </script>
 

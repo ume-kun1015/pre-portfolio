@@ -14,16 +14,11 @@
 </template>
 
 <script lang="ts">
+import { Skill } from '../../entities/skill'
 import { Component, Vue, Prop } from 'nuxt-property-decorator'
 
-interface Skill {
-  name: string
-  years: string
-  percent: number
-}
-
 @Component
-export default class ProtolioProgressBar extends Vue {
+export default class PortfolioProgressBar extends Vue {
   intersectionObserver: IntersectionObserver | null = null
 
   @Prop({ type: Object, default: () => {} })

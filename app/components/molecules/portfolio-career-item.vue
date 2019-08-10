@@ -17,27 +17,21 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    companyName: {
-      type: String,
-      default: '',
-    },
-    jobDescription: {
-      type: String,
-      default: '',
-    },
-    startDate: {
-      type: String,
-      default: '',
-    },
-  },
-  data() {
-    return {
-      phoneIcon: ['fas', 'mobile-alt'],
-    }
-  },
+<script lang="ts">
+import { Vue, Prop, Component } from 'nuxt-property-decorator'
+
+@Component
+export default class PortfolioCareerItem extends Vue {
+  phoneIcon: String[] = ['fas', 'mobile-alt']
+
+  @Prop({ type: String, default: '' })
+  companyName!: String
+
+  @Prop({ type: String, default: '' })
+  jobDescription!: String
+
+  @Prop({ type: String, default: '' })
+  startDate!: String
 }
 </script>
 

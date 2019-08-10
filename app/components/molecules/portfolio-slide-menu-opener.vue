@@ -4,20 +4,19 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { mapMutations } from 'vuex'
+import { Component, Vue } from 'nuxt-property-decorator'
 
-export default {
-  data() {
-    return {
-      menuIconClass: ['fas', 'bars'],
-    }
-  },
+@Component({
   methods: {
     ...mapMutations({
       open: 'slide-menu/open',
     }),
   },
+})
+export default class PortfolioSlideMenuOpener extends Vue {
+  menuIconClass: String[] = ['fas', 'bars']
 }
 </script>
 

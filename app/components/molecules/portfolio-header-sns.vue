@@ -9,22 +9,19 @@
   </ul>
 </template>
 
-<script>
-import PortfolioGithubBtn from '~/components/atoms/portfolio-github-btn.vue'
-import PortfolioTwitterBtn from '~/components/atoms/portfolio-twitter-btn.vue'
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator'
 
-export default {
+import PortfolioGithubBtn from '../atoms/portfolio-github-btn.vue'
+import PortfolioTwitterBtn from '../atoms/portfolio-twitter-btn.vue'
+
+@Component({
   components: {
     PortfolioGithubBtn,
     PortfolioTwitterBtn,
   },
-  props: {
-    menus: {
-      type: Array,
-      default: () => [],
-    },
-  },
-}
+})
+export default class PortfolioHeaderSns extends Vue {}
 </script>
 
 <style lang="scss" scoped>

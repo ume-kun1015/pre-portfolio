@@ -11,20 +11,16 @@
   </header>
 </template>
 
-<script>
-import PortfolioSlideMenuOpener from '~/components/molecules/portfolio-slide-menu-opener.vue'
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator'
+import PortfolioSlideMenuOpener from '../molecules/portfolio-slide-menu-opener.vue'
 
-export default {
+@Component({
   components: {
     PortfolioSlideMenuOpener,
   },
-  data() {
-    return {
-      menus: [],
-      spMenuBarIconClass: ['fas', 'bars'],
-    }
-  },
-}
+})
+export default class PortfolioHeader extends Vue {}
 </script>
 
 <style lang="scss" scoped>
