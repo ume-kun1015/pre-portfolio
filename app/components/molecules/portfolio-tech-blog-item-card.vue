@@ -28,7 +28,7 @@ import { Component, Vue, Prop } from 'nuxt-property-decorator'
 export default class PortfolioTechBlogItemCard extends Vue {
   likesIconClass: String[] = ['fas', 'thumbs-up']
 
-  @Prop({ type: Object, default: () => {} })
+  @Prop({ type: Object as () => QiitaItem, default: () => {} })
   item!: QiitaItem
 }
 </script>
