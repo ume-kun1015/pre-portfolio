@@ -14,8 +14,19 @@ export default {
         res.json(response.body)
       })
       .catch(err => {
-        // TODO: エラーハンドリング。一旦qiita側でエラーだったら、空の配列を返す。
-        res.json([])
+        if (err.status == 403) {
+          const errorMessage = '記事を取得するのにエラーが発生しました。しばらく時間を置いてから再度アクセスしてください。'
+          const portfolioError = new Error(errorMessage)
+          portfolioError.data = {
+            code: err.status,
+            name: 'Unauthorized',
+            message: errorMessage,
+          }
+
+          return portfolioError
+        }
+
+        return err
       })
   },
 }
