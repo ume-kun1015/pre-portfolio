@@ -5,8 +5,6 @@ Nuxtjsで開発されたポートフォリオサイトです。
 
 My portfolio Website built by Nuxtjs.
 
-https://romukey.github.io/portfolio
-
 ## DEVELOPMENT
 
 ``` bash
@@ -17,7 +15,7 @@ $ npm install
 
 ## Deploy 
 
-Github Pagesを使用しています。
+Firebaseを使用しています。
 masterブランチにプルリクエストがマージされると、CircleCI経由で自動デプロイされます。
 
-This is published by Github Pages. Automatic deploy is setup. Any commit or change through pull requests to master branch will be automatically deployed.
+This is published on Firebase. Automatic deploy is setup. Any commit or change through pull requests to master branch will be automatically deployed.
