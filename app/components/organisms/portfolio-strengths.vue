@@ -1,5 +1,5 @@
 <template>
-  <section class="strengths-section-wrapper" data-aos="fade" data-aos-delay="200">
+  <div class="portfolio-strengths">
     <div class="strengths-title-wrapper">
       <div class="strengths-text">
         <h2>自分の強み</h2>
@@ -12,7 +12,13 @@
         </li>
       </ul>
     </div>
-  </section>
+
+    <div class="portolio-strengths-link">
+      <nuxt-link to="/strengths">
+        もっと詳しく...
+      </nuxt-link>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -35,16 +41,21 @@ export default class PortfolioStrengths extends Vue {
     },
     {
       summary: 'フルスタックエンジニア',
-      description: 'アプリケーションをリリースするまでの工程を知り、フロント/サーバーエンド/インフラサイドで適宜開発を行える。',
+      description: 'アプリケーションをリリースするまでの工程を知り、フロント/サーバーエンド/クラウドインフラで適宜開発や改修を行える。',
       iconStyle: ['far', 'clipboard'],
+    },
+    {
+      summary: 'バイリンガル',
+      description: '過去Toefl99/120を取得。海外の人だけで編成されたチームで、英語でコミュニーケションを取っての開発経験があります。',
+      iconStyle: ['fas', 'language'],
     },
   ]
 }
 </script>
 
 <style lang="scss" scoped>
-.strengths-section-wrapper {
-  padding: 5em 0;
+.portfolio-strengths {
+  padding: 5em 3.2%;
 
   .strengths-title-wrapper {
     max-width: $breakpoint-pc-large;
@@ -82,6 +93,11 @@ export default class PortfolioStrengths extends Vue {
         }
       }
     }
+  }
+
+  .portolio-strengths-link {
+    margin: 1em 0;
+    text-align: right;
   }
 }
 </style>

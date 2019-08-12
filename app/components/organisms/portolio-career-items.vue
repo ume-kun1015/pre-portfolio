@@ -31,23 +31,7 @@ import PortfolioCareerItem from '../molecules/portfolio-career-item.vue'
   },
 })
 export default class PortfolioCareerItems extends Vue {
-  careers: Career[] = [
-    {
-      companyName: 'timers-inc(インターン生)',
-      jobDescription: '1. 社員全員が分析できるようなプラットホームの開発/運用。2. 社内SlackBot開発 3. PHPでのAPIサーバー開発',
-      startDate: '2016/08',
-    },
-    {
-      companyName: 'VISITS Technologies株式会社',
-      jobDescription: '1. 新規事業になるアプリのAPIサーバーをRuby on Railsで開発。2. 既存サービスのVISITS OBの運用',
-      startDate: '2017/08',
-    },
-    {
-      companyName: '株式会社エブリー',
-      jobDescription: '1. DELISH KITCHENのAPIサーバーの開発/運用 2. DELISH KITCHENのWEBフロント開発',
-      startDate: '2018/03',
-    },
-  ]
+  careers: Career[] = []
 }
 </script>
 

@@ -3,6 +3,8 @@
     <div class="portfolio-tech-blogs-content">
       <h1 class="text-h2">{{ pageTitle }}</h1>
 
+      <p>Comming soon...</p>
+
       <portfolio-tech-blog-item-cards :items="items" />
     </div>
   </div>
@@ -32,10 +34,6 @@ export default class TechBlogsIndex extends Vue {
       title: this.pageTitle,
     }
   }
-
-  fetch({ store, app, error }) {
-    return app.$axiosErrorHandler(store.dispatch('qiita-items/fetch'), error)
-  }
 }
 </script>
 
@@ -43,6 +41,7 @@ export default class TechBlogsIndex extends Vue {
 .portfolio-tech-blogs {
   background: $dark_navy;
   color: $blue;
+  height: calc(100vh - 100px);
 
   .portfolio-tech-blogs-content {
     max-width: 960px;

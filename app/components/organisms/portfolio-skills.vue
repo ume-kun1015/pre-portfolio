@@ -14,6 +14,10 @@
         <portfolio-progress-bar :skill="skill" />
       </li>
     </ul>
+
+    <nuxt-link to="/skills">
+      もっと詳しく...
+    </nuxt-link>
   </div>
 </template>
 
@@ -58,6 +62,7 @@ export default class PortfolioSkills extends Vue {
 .portfolio-skills {
   margin: 3em 0;
   padding: 0 3.2%;
+  text-align: right;
 
   .skills-title-wrapper {
     max-width: $breakpoint-pc-large;
@@ -81,6 +86,11 @@ export default class PortfolioSkills extends Vue {
       border-bottom: 1px solid $dark_navy;
       transition: width 0.3s ease-in-out;
     }
+  }
+
+  a {
+    display: block;
+    margin: 1em 0;
   }
 
   @media only screen and (max-width: $breakpoint-mobile) {
