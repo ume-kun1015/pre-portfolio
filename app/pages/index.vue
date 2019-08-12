@@ -3,7 +3,7 @@
     <section class="introduction-section-wrapper">
       <div class="introduction-wrapper">
         <div class="introduction-text">
-          <p class="text-h2">
+          <p>
             アカペラとスノボが<br />
             大好きなエンジニア<br />
             利用するのに場所や時間を選ばない <br />
@@ -72,6 +72,8 @@ export default class TopPage extends Vue {
         margin: 0 auto;
 
         p {
+          font-size: 1.4rem;
+          font-weight: bold;
           text-align: center;
         }
       }
@@ -93,7 +95,6 @@ export default class TopPage extends Vue {
 
           p {
             word-wrap: break-word;
-            font-size: 1.5em;
           }
         }
       }
