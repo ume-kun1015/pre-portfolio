@@ -1,4 +1,7 @@
+require('dotenv').config()
+
 const portfolioContext = require('./portfolio.config.js')
+const { BASIC_AUTH_USERNAME, BASIC_AUTH_PASSWORD, PORTFOLIO_ENV } = process.env
 
 module.exports = {
   mode: 'universal',
@@ -6,6 +9,9 @@ module.exports = {
 
   env: {
     portfolio: portfolioContext,
+    BASIC_AUTH_USERNAME,
+    BASIC_AUTH_PASSWORD,
+    PORTFOLIO_ENV,
   },
 
   /*
@@ -45,6 +51,7 @@ module.exports = {
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
+    '@nuxtjs/dotenv',
     '@nuxtjs/style-resources',
     [
       'nuxt-fontawesome',

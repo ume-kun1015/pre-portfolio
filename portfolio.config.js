@@ -3,7 +3,7 @@ const devUrl = 'https://dev-portfolio-6bfd1.firebaseapp.com/'
 const localUrl = 'http://localhost:3000'
 
 function getRootUrl() {
-  switch (process.env.portfolio_env) {
+  switch (process.env.PORTFOLIO_ENV) {
     case 'prd':
       return prdUrl
     case 'dev':

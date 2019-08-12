@@ -42,8 +42,13 @@ jobs:
           command: |
             if [ "$CIRCLE_BRANCH" = "master" ]; then
               project_id=$PROJECT_ID
+              echo "PORTFOLIO_ENV=prd" >> .env
             else
               project_id=$DEV_PROJECT_ID
+              echo "PORTFOLIO_ENV=dev" >> .env
+              echo "BASIC_AUTH_USERNAME=$BASIC_AUTH_USERNAME" >> .env
+              echo "BASIC_AUTH_PASSWORD=$BASIC_AUTH_PASSWORD" >> .env
+
               npm run firebase:functions:config:set \
               -- --project $project_id dev_portfolio.portfolio_env=dev  \
               dev_portfolio.basic_auth_username=$BASIC_AUTH_USERNAME \
