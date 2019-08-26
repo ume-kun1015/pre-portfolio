@@ -25,7 +25,7 @@
 import { Component, Vue } from 'nuxt-property-decorator'
 
 import { Strength } from '../../entities/strength'
-import PortfolioStrengthItemCard from '../molecules/portfolio-strength-item-card.vue'
+const PortfolioStrengthItemCard = () => import('../molecules/portfolio-strength-item-card.vue')
 
 @Component({
   components: {

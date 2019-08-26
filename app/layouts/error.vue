@@ -14,7 +14,7 @@
 import { Error } from '../entities/error'
 import { Component, Vue, Prop } from 'nuxt-property-decorator'
 
-import PortfolioErrorBtn from '../components/atoms/portfolio-error-btn.vue'
+const PortfolioErrorBtn = () => import('../components/atoms/portfolio-error-btn.vue')
 
 @Component({
   components: {

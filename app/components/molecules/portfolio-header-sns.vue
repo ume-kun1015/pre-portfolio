@@ -12,8 +12,8 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 
-import PortfolioGithubBtn from '../atoms/portfolio-github-btn.vue'
-import PortfolioTwitterBtn from '../atoms/portfolio-twitter-btn.vue'
+const PortfolioGithubBtn = () => import('../atoms/portfolio-github-btn.vue')
+const PortfolioTwitterBtn = () => import('../atoms/portfolio-twitter-btn.vue')
 
 @Component({
   components: {

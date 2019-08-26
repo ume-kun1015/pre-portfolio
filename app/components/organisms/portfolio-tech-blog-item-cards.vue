@@ -15,7 +15,7 @@
 import { QiitaItem } from '../../entities/qiita-item'
 import { Component, Vue, Prop } from 'nuxt-property-decorator'
 
-import PortfolioTechBlogItemCard from '../molecules/portfolio-tech-blog-item-card.vue'
+const PortfolioTechBlogItemCard = () => import('../molecules/portfolio-tech-blog-item-card.vue')
 
 @Component({
   components: {

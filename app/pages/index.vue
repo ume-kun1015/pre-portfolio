@@ -28,9 +28,9 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 
-import PortfolioLogo from '../components/atoms/portfolio-logo.vue'
-import PortfolioSkills from '../components/organisms/portfolio-skills.vue'
-import PortfolioStrengths from '../components/organisms/portfolio-strengths.vue'
+const PortfolioLogo = () => import('../components/atoms/portfolio-logo.vue')
+const PortfolioSkills = () => import('../components/organisms/portfolio-skills.vue')
+const PortfolioStrengths = () => import('../components/organisms/portfolio-strengths.vue')
 
 @Component({
   components: {

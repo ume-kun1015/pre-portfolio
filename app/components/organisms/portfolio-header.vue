@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
-import PortfolioSlideMenuOpener from '../molecules/portfolio-slide-menu-opener.vue'
+const PortfolioSlideMenuOpener = () => import('../molecules/portfolio-slide-menu-opener.vue')
 
 @Component({
   components: {

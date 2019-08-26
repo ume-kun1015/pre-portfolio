@@ -85,6 +85,10 @@ module.exports = {
    ** Build configuration
    */
   build: {
+    babel: {
+      plugins: ['babel-plugin-smart-webpack-import'],
+    },
+
     /*
      ** You can extend webpack config here
      */
