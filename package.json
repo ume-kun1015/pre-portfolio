@@ -48,6 +48,7 @@
     "@typescript-eslint/eslint-plugin": "1.13.0",
     "@typescript-eslint/parser": "1.13.0",
     "babel-eslint": "10.0.1",
+    "babel-plugin-smart-webpack-import": "1.5.0",
     "eslint": "5.9.0",
     "eslint-config-prettier": "6.0.0",
     "eslint-loader": "2.0.0",
