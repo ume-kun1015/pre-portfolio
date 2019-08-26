@@ -50,10 +50,10 @@
 import { Component, Vue } from 'nuxt-property-decorator'
 import { mapGetters, mapMutations } from 'vuex'
 
-import PortfolioLogoBtn from '../atoms/portfolio-logo-btn.vue'
-import PortfolioGithubBtn from '../atoms/portfolio-github-btn.vue'
-import PortfolioTwitterBtn from '../atoms/portfolio-github-btn.vue'
-import PortfolioTechBtn from '../atoms/portfolio-tech-btn.vue'
+const PortfolioLogoBtn = () => import('../atoms/portfolio-logo-btn.vue')
+const PortfolioGithubBtn = () => import('../atoms/portfolio-github-btn.vue')
+const PortfolioTwitterBtn = () => import('../atoms/portfolio-github-btn.vue')
+const PortfolioTechBtn = () => import('../atoms/portfolio-tech-btn.vue')
 
 @Component({
   components: {

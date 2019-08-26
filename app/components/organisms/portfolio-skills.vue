@@ -25,7 +25,7 @@
 import { Skill } from '../../entities/skill'
 import { Component, Vue } from 'nuxt-property-decorator'
 
-import PortfolioProgressBar from '../molecules/portfolio-progress-bar.vue'
+const PortfolioProgressBar = () => import('../molecules/portfolio-progress-bar.vue')
 
 @Component({
   components: {

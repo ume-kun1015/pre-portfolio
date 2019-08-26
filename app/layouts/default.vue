@@ -10,8 +10,9 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 
-import PortfolioHeader from '../components/organisms/portfolio-header.vue'
-import PortfolioSlideMenu from '../components/organisms/portfolio-slide-menu.vue'
+const PortfolioHeader = () => import('../components/organisms/portfolio-header.vue')
+const PortfolioSlideMenu = () => import('../components/organisms/portfolio-slide-menu.vue')
+
 @Component({
   components: {
     PortfolioHeader,

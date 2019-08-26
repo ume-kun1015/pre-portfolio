@@ -14,7 +14,7 @@
 import { mapGetters } from 'vuex'
 import { Component, Vue } from 'nuxt-property-decorator'
 
-import PortfolioTechBlogItemCards from '../../components/organisms/portfolio-tech-blog-item-cards.vue'
+const PortfolioTechBlogItemCards = () => import('../../components/organisms/portfolio-tech-blog-item-cards.vue')
 
 @Component({
   components: {
