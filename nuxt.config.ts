@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const portfolioContext = require('./portfolio.config.js')
 
 module.exports = {
@@ -6,6 +8,13 @@ module.exports = {
 
   env: {
     portfolio: portfolioContext,
+    PORTFOLIO_ENV: process.env.PORTFOLIO_ENV,
+    FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
+    FIREBASE_AUTH_DOMAIN: process.env.FIREBASE_AUTH_DOMAIN,
+    FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID,
+    FIREBASE_DATABASE_URL: process.env.FIREBASE_DATABASE_URL,
+    FIRBASE_APP_ID: process.env.FIRBASE_APP_ID,
+    FIREBASE_MESSAGING_SENDER_ID: process.env.FIREBASE_MESSAGING_SENDER_ID,
   },
 
   /*
