@@ -3,7 +3,9 @@
     <div class="portfolio-tech-blogs-content">
       <h1 class="text-h2">{{ pageTitle }}</h1>
 
-      <portfolio-tech-blog-item-cards :items="techBlogItems" />
+      <p>Comming soon...</p>
+
+      <portfolio-tech-blog-item-cards :items="items" />
     </div>
   </div>
 </template>
@@ -20,7 +22,7 @@ const PortfolioTechBlogItemCards = () => import('../../components/organisms/port
   },
   computed: {
     ...mapGetters({
-      techBlogItems: 'tech-blog-items/techBlogItems',
+      items: 'qiita-items/items',
     }),
   },
 })
@@ -32,10 +34,6 @@ export default class TechBlogsIndex extends Vue {
       title: this.pageTitle,
     }
   }
-
-  fetch({ app, store, error }) {
-    return app.$axiosErrorHandler(store.dispatch('tech-blog-items/fetch'), error)
-  }
 }
 </script>
 
@@ -43,6 +41,7 @@ export default class TechBlogsIndex extends Vue {
 .portfolio-tech-blogs {
   background: $dark_navy;
   color: $blue;
+  height: calc(100vh - 100px);
 
   .portfolio-tech-blogs-content {
     max-width: 960px;
