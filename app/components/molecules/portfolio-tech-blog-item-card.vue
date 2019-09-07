@@ -1,6 +1,6 @@
 <template>
   <div class="portfolio-tech-blog-item-card">
-    <a :href="item.url" target="_blank" rel="noopener">
+    <nuxt-link :to="`/tech-blogs/${item.id}`">
       <div class="item-title">
         {{ item.title }}
       </div>
@@ -9,14 +9,14 @@
         いいね数 <font-awesome-icon class="likes-icon-class" :icon="likesIconClass" />{{ item.likes_count }}
       </div>
 
-      <div class="item-tags">
+      <div v-if="item.tags && item.tags.length" class="item-tags">
         <ul>
           <li v-for="(tag, index) in item.tags" :key="index">
             {{ tag.name }}
           </li>
         </ul>
       </div>
-    </a>
+    </nuxt-link>
   </div>
 </template>
 
