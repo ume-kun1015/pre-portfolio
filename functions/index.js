@@ -4,9 +4,17 @@ const express = require('express')
 const basicAuth = require('basic-auth-connect')
 const app = express()
 
+const envs = functions.config().environment
+Object.entries(envs).forEach((k, v) => {
+  process.env[`${k}`.toUpperCase()] = v
+})
+
 const config = {
   dev: false,
-  buildDir: 'ssr',
+  buildDir: '.nuxt',
+  build: {
+    publicPath: '/assets/',
+  },
 }
 
 const nuxt = new Nuxt(config)
@@ -20,9 +28,7 @@ function handleRequest(req, res) {
   })
 }
 
-const devPortfolioEnvs = functions.config().dev_portfolio
-
-if (devPortfolioEnvs.portfolio_env === 'dev') {
+if (process.env.PORTFOLIO_ENV === 'dev') {
   app.all('/*', basicAuth(devPortfolioEnvs.basic_auth_username, devPortfolioEnvs.basic_auth_password))
 }
 

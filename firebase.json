@@ -1,12 +1,11 @@
 {
   "functions": {
-    "source": "functions"
+    "source": "dist/server"
   },
   "hosting": {
-    "public": "app/static",
+    "public": "dist/client",
     "ignore": [
       "firebase.json",
-      "**/.*",
       "**/node_modules/**"
     ],
     "rewrites": [

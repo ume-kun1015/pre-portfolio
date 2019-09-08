@@ -3,15 +3,12 @@
     <div class="portfolio-tech-blogs-content">
       <h1 class="text-h2">{{ pageTitle }}</h1>
 
-      <p>Comming soon...</p>
-
-      <portfolio-tech-blog-item-cards :items="items" />
+      {{ items }}
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { mapGetters } from 'vuex'
 import { Component, Vue } from 'nuxt-property-decorator'
 
 const PortfolioTechBlogItemCards = () => import('../../components/organisms/portfolio-tech-blog-item-cards.vue')
@@ -20,19 +17,21 @@ const PortfolioTechBlogItemCards = () => import('../../components/organisms/port
   components: {
     PortfolioTechBlogItemCards,
   },
-  computed: {
-    ...mapGetters({
-      items: 'qiita-items/items',
-    }),
-  },
 })
 export default class TechBlogsIndex extends Vue {
+  items: any[] = []
   pageTitle: String = 'TECH BLOGS'
 
   head() {
     return {
       title: this.pageTitle,
     }
+  }
+
+  async asyncData({ app, error, store }) {
+    const snapshot = await app.$firestore.collection('tech-blog-items').get()
+
+    return { items: snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })) }
   }
 }
 </script>

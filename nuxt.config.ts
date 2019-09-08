@@ -6,6 +6,14 @@ module.exports = {
 
   env: {
     portfolio: portfolioContext,
+    PORTFOLIO_ENV: process.env.PORTFOLIO_ENV,
+    APIKEY: process.env.APIKEY,
+    AUTHDOMAIN: process.env.AUTHDOMAIN,
+    DATABASEURL: process.env.DATABASEURL,
+    PROJECTID: process.env.PROJECTID,
+    STORAGEBUCKET: process.env.STORAGEBUCKET,
+    MESSAGINGSENDERID: process.env.MESSAGINGSENDERID,
+    APPID: process.env.APPID,
   },
 
   /*
@@ -37,7 +45,13 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/constant.js', '~/plugins/meta-info.ts', '~/plugins/portfolio-context.js', '~/plugins/axios-error-handler.js'],
+  plugins: [
+    '~/plugins/constant.js',
+    '~/plugins/meta-info.ts',
+    '~/plugins/portfolio-context.js',
+    '~/plugins/axios-error-handler.js',
+    '~/plugins/firebase.js',
+  ],
 
   /*
    ** Nuxt.js modules
@@ -87,7 +101,21 @@ module.exports = {
   build: {
     babel: {
       plugins: ['babel-plugin-smart-webpack-import'],
+
+      presets({ isServer }) {
+        return [
+          [
+            require.resolve('@nuxt/babel-preset-app'),
+            {
+              buildTarget: isServer ? 'server' : 'client',
+              corejs: { version: 3 },
+            },
+          ],
+        ]
+      },
     },
+
+    publicPath: '/assets/',
 
     /*
      ** You can extend webpack config here
