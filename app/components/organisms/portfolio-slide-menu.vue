@@ -74,7 +74,7 @@ const PortfolioTechBtn = () => import('../atoms/portfolio-tech-btn.vue')
   },
 })
 export default class PortfolioSlideMenu extends Vue {
-  openInNewTab(url) {
+  openInNewTab(url: string) {
     window.open(url)
   }
 }

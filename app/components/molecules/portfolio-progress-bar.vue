@@ -25,7 +25,7 @@ export default class PortfolioProgressBar extends Vue {
   skill!: Skill
 
   mounted(): void {
-    const observeFunc = entry => {
+    const observeFunc = (entry: IntersectionObserverEntry) => {
       if (entry.isIntersecting) {
         this.activateProgress()
       }

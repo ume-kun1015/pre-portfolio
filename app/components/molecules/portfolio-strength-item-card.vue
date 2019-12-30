@@ -35,7 +35,7 @@ export default class PortfolioStrengthItemCard extends Vue {
 
   mounted(): void {
     const observeOptions = { rootMargin: '-150px' }
-    const observeFunc = entry => {
+    const observeFunc = (entry: IntersectionObserverEntry) => {
       if (entry.isIntersecting) {
         this.fadeIn()
       }
