@@ -5,10 +5,10 @@
   "author": "romukey",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon app/server/index.js --watch server",
-    "build": "nuxt build",
+    "dev": "cross-env NODE_ENV=development nodemon app/server/index.ts --watch server",
+    "build": "nuxt-ts build",
     "build:copy": "cp -R .nuxt/dist functions/ssr/dist",
-    "start": "cross-env NODE_ENV=production node app/server/index.js",
+    "start": "cross-env NODE_ENV=production node app/server/index.ts",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
