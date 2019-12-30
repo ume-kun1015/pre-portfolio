@@ -1,6 +1,8 @@
+import { Configuration } from '@nuxt/types'
+
 const portfolioContext = require('./portfolio.config.js')
 
-module.exports = {
+const nuxtConfig: Configuration = {
   mode: 'universal',
   srcDir: 'app',
 
@@ -16,7 +18,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { hid: 'viewport', name: 'viewport', content: 'width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=no' },
-      { hid: 'http-equiv', 'http-equiv': 'X-UA-Compatible', content: 'IE=edge,chrome=1' },
+      { hid: 'http-equiv', name: 'http-equiv', 'http-equiv': 'X-UA-Compatible', content: 'IE=edge,chrome=1' },
       { hid: 'description', name: 'description', content: 'ROMUKEY Portfolio Built by Nuxtjs' },
       { hid: 'robots', name: 'robots', content: 'index, follow' },
     ],
@@ -95,7 +97,7 @@ module.exports = {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {
+    extend(config: any, ctx: any) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
@@ -114,3 +116,5 @@ module.exports = {
     },
   },
 }
+
+module.exports = nuxtConfig
