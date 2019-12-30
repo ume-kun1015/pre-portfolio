@@ -66,6 +66,9 @@ module.exports = {
       },
     ],
   ],
+
+  buildModules: ['@nuxt/typescript-build'],
+
   /*
    ** Axios module configuration
    */
