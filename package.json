@@ -7,13 +7,10 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon app/server/index.js --watch server",
     "build": "nuxt build",
-    "build:copy": "cp -R .nuxt/dist functions/ssr/dist",
     "start": "cross-env NODE_ENV=production node app/server/index.js",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lint:fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
-    "functions:ssr:clean": "rm -rf functions/ssr && mkdir -p functions/ssr",
-    "firebase:functions:config:set": "firebase functions:config:set"
+    "lint:fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
   },
   "lint-staged": {
     "*.{js,vue}": [
