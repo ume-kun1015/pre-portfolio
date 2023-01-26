@@ -1,21 +1,42 @@
-# Portfolio
+# Nuxt 3 Minimal Starter
 
-## 概要
-Nuxtjsで開発されたポートフォリオサイトです。
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-My portfolio Website built by Nuxtjs.
+## Setup
 
-## DEVELOPMENT
+Make sure to install the dependencies:
 
-``` bash
-$ brew install ndenv
-$ ndenv install `cat .node-version`
-$ npm install
+```bash
+# yarn
+yarn install
+
+# npm
+npm install
+
+# pnpm
+pnpm install
 ```
 
-## Deploy 
+## Development Server
 
-Firebaseを使用しています。
-masterブランチにプルリクエストがマージされると、CircleCI経由で自動デプロイされます。
+Start the development server on http://localhost:3000
 
-This is published on Firebase. Automatic deploy is setup. Any commit or change through pull requests to master branch will be automatically deployed.
+```bash
+npm run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+npm run build
+```
+
+Locally preview production build:
+
+```bash
+npm run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
