@@ -4,61 +4,63 @@ module.exports = {
     browser: true,
     node: true,
   },
-  parserOptions: {
-    parser: '@typescript-eslint/parser',
-    sourceType: 'module',
-  },
-  extends: ['plugin:vue/recommended', 'plugin:prettier/recommended', 'prettier/@typescript-eslint'],
-  // required to lint *.vue files
-  plugins: ['vue', 'prettier', '@typescript-eslint'],
-  // add your custom rules here
+
+  extends: [
+    '@nuxtjs/eslint-config-typescript',
+    'plugin:nuxt/recommended',
+    'plugin:import/errors',
+    'plugin:prettier/recommended',
+    'plugin:vuejs-accessibility/recommended',
+  ],
+
+  plugins: ['nuxt'],
+
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-unused-vars': "off",
+    'no-unused-vars': 0,
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
-        args: 'none',
+        vars: 'all',
+        args: 'after-used',
+        ignoreRestSiblings: true,
+        argsIgnorePattern: '',
       },
     ],
-    'max-len': [
+    '@typescript-eslint/ban-types': 2,
+    '@typescript-eslint/naming-convention': [
       'error',
       {
-        code: 140,
-        ignoreComments: true,
-        ignoreTrailingComments: true,
-        ignoreUrls: true,
-        ignoreStrings: true,
-        ignoreTemplateLiterals: true,
-        ignoreRegExpLiterals: true,
+        selector: 'typeAlias',
+        format: ['PascalCase'],
       },
-    ],
-    "vue/component-name-in-template-casing": [
-      "error",
-      "kebab-case"
-    ],
-    "vue/max-attributes-per-line": ["error", {
-      "singleline": 3,
-      "multiline": {
-        "max": 3,
-        "allowFirstLine": false
-      }
-    }],
-    "vue/singleline-html-element-content-newline": "off",
-    'prettier/prettier': [
-      'error',
       {
-        singleQuote: true,
-        trailingComma: 'es5',
-        printWidth: 140,
-        semi: false,
+        selector: 'interface',
+        format: ['PascalCase'],
       },
     ],
-    "vue/html-self-closing": ["error", {
-      "html": {
-        "void": "always",
-        }
-    }],
+
+    // import
+    'import/extensions': 0,
+    'import/prefer-default-export': 0,
+
+    // eslint-plugin-vuejs-accessibility
+    'vuejs-accessibility/alt-text': 0,
+    'vuejs-accessibility/anchor-has-content': 0,
+    'vuejs-accessibility/click-events-have-key-events': 0,
+    'vuejs-accessibility/form-control-has-label': 0,
+    'vuejs-accessibility/iframe-has-title': 0,
+    'vuejs-accessibility/interactive-supports-focus': 0,
+    'vuejs-accessibility/label-has-for': 0,
+    'vuejs-accessibility/mouse-events-have-key-events': 0,
+    'vuejs-accessibility/no-onchange': 0,
+    'vuejs-accessibility/tabindex-no-positive': 0,
   },
+  overrides: [
+    {
+      files: ['*.ts'],
+      rules: {
+        '@typescript-eslint/explicit-function-return-type': 'error',
+      },
+    },
+  ],
 }
